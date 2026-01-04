@@ -2,37 +2,37 @@
   "nikolay-fomenko": {
     "id": "nikolay-fomenko",
     "name": "Николай Фоменко",
-    "photo": "/assets/persons/nikolay-fomenko.jpg",
+    "photo": "assets/persons/nikolay-fomenko.jpg",
     "bio": "Российский актёр, телеведущий, музыкант"
   },
   "anastasia-stotskaya": {
     "id": "anastasia-stotskaya",
     "name": "Анастасия Стоцкая",
-    "photo": "/assets/persons/anastasia-stotskaya.jpg",
+    "photo": "assets/persons/anastasia-stotskaya.jpg",
     "bio": "Российская певица и актриса"
   },
   "yulia-iva": {
     "id": "yulia-iva",
     "name": "Юлия Ива",
-    "photo": "/assets/persons/yulia-iva.jpg",
+    "photo": "assets/persons/yulia-iva.jpg",
     "bio": "Актриса театра и кино"
   },
   "alexander-matrosov": {
     "id": "alexander-matrosov",
     "name": "Александр Матросов",
-    "photo": "/assets/persons/alexander-matrosov.jpg",
+    "photo": "assets/persons/alexander-matrosov.jpg",
     "bio": "Актёр музыкального театра"
   },
   "marina-alexandrova": {
     "id": "marina-alexandrova",
     "name": "Марина Александрова",
-    "photo": "/assets/persons/marina-alexandrova.jpg",
+    "photo": "assets/persons/marina-alexandrova.jpg",
     "bio": "Российская актриса театра и кино"
   },
   "dmitry-dyuzhev": {
     "id": "dmitry-dyuzhev",
     "name": "Дмитрий Дюжев",
-    "photo": "/assets/persons/dmitry-dyuzhev.jpg",
+    "photo": "assets/persons/dmitry-dyuzhev.jpg",
     "bio": "Актёр театра и кино"
   }
 }

@@ -7,17 +7,18 @@
   "reviewsCount": 895,
   "duration": "01:40",
   "images": [
-    "/assets/events/mamma-mia/gallery-1.jpg",
-    "/assets/events/mamma-mia/gallery-2.jpg",
-    "/assets/events/mamma-mia/gallery-3.jpg"
+    "assets/events/mamma-mia/gallery-1.jpg",
+    "assets/events/mamma-mia/gallery-2.jpg",
+    "assets/events/mamma-mia/gallery-3.jpg",
+    "assets/events/mamma-mia/gallery-4.jpg"
   ],
-  "coverImage": "/assets/events/mamma-mia/gallery-1.jpg",
+  "coverImage": "assets/events/mamma-mia/gallery-1.jpg",
   "description": {
     "short": "Директор завода хочет подарить жене настоящий мюзикл, но не может остаться в стороне и требует от бедных постановщиков изменения одно нелепее другого.",
     "full": "В день премьеры градус безумия достигает предела: режиссеру нужно добавить в шоу новые номера, на ходу переписать музыку и слова и попутно не разругаться из-за этих изменений со всеми актёрами.",
     "video": {
       "url": "https://rutube.ru/video/example",
-      "thumbnail": "/assets/events/mamma-mia/video-thumb.jpg",
+      "thumbnail": "assets/events/mamma-mia/video-thumb.jpg",
       "duration": "2:59"
     }
   },
@@ -198,12 +199,12 @@
   "promos": [
     {
       "id": "promo-buffet",
-      "image": "/assets/promos/buffet-banner.jpg",
+      "image": "assets/promos/buffet-banner.jpg",
       "link": "/promo/buffet"
     },
     {
       "id": "promo-mts",
-      "image": "/assets/promos/mts-premium-banner.jpg",
+      "image": "assets/promos/mts-premium-banner.jpg",
       "link": "/promo/mts-premium"
     }
   ],

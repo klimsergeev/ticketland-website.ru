@@ -3,32 +3,32 @@
     font-family: 'MTS Compact';
     font-weight: 400;
     font-style: normal;
-    src: url('assets/fonts/MTSCompact-Regular.woff2') format('woff2'),
-         url('assets/fonts/MTSCompact-Regular.woff') format('woff');
+    src: url('assets/font/MTSCompact-Regular.woff2') format('woff2'),
+         url('assets/font/MTSCompact-Regular.woff') format('woff');
 }
 
 @font-face {
     font-family: 'MTS Compact';
     font-weight: 500;
     font-style: normal;
-    src: url('assets/fonts/MTSCompact-Medium.woff2') format('woff2'),
-         url('assets/fonts/MTSCompact-Medium.woff') format('woff');
+    src: url('assets/font/MTSCompact-Medium.woff2') format('woff2'),
+         url('assets/font/MTSCompact-Medium.woff') format('woff');
 }
 
 @font-face {
     font-family: 'MTS Text';
     font-weight: 400;
     font-style: normal;
-    src: url('assets/fonts/MTSText-Regular.woff2') format('woff2'),
-         url('assets/fonts/MTSText-Regular.woff') format('woff');
+    src: url('assets/font/MTSText-Regular.woff2') format('woff2'),
+         url('assets/font/MTSText-Regular.woff') format('woff');
 }
 
 @font-face {
     font-family: 'MTS Text';
     font-weight: 500;
     font-style: normal;
-    src: url('assets/fonts/MTSText-Medium.woff2') format('woff2'),
-         url('assets/fonts/MTSText-Medium.woff') format('woff');
+    src: url('assets/font/MTSText-Medium.woff2') format('woff2'),
+         url('assets/font/MTSText-Medium.woff') format('woff');
 }
 
 /* Design Tokens */
