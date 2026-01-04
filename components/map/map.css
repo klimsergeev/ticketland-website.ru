@@ -1,0 +1,98 @@
+/* Map Component Styles */
+
+.map-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+}
+
+.map-title {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.map-heading {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.map-address {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.map-container {
+    position: relative;
+    width: 328px;
+    height: 236px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.map-btn {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    background: var(--controls-tertiary-active);
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    box-shadow: none;
+}
+
+.map-btn:hover {
+    opacity: 0.95;
+}
+
+.map-btn:active {
+    opacity: 0.9;
+}
+
+.map-btn img {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.map-fullscreen {
+    top: 8px;
+    right: 8px;
+}
+
+.map-zoom-buttons {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.map-zoom-in,
+.map-zoom-out {
+    position: static;
+}
+

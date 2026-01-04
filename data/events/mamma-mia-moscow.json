@@ -1,0 +1,217 @@
+{
+  "id": "mamma-mia-moscow",
+  "title": "«МАММА МИМО! или Мюзикл пошёл не так»",
+  "genre": "Мюзикл",
+  "ageRating": 16,
+  "rating": 9.5,
+  "reviewsCount": 895,
+  "duration": "01:40",
+  "images": [
+    "/assets/events/mamma-mia/gallery-1.jpg",
+    "/assets/events/mamma-mia/gallery-2.jpg",
+    "/assets/events/mamma-mia/gallery-3.jpg"
+  ],
+  "coverImage": "/assets/events/mamma-mia/gallery-1.jpg",
+  "description": {
+    "short": "Директор завода хочет подарить жене настоящий мюзикл, но не может остаться в стороне и требует от бедных постановщиков изменения одно нелепее другого.",
+    "full": "В день премьеры градус безумия достигает предела: режиссеру нужно добавить в шоу новые номера, на ходу переписать музыку и слова и попутно не разругаться из-за этих изменений со всеми актёрами.",
+    "video": {
+      "url": "https://rutube.ru/video/example",
+      "thumbnail": "/assets/events/mamma-mia/video-thumb.jpg",
+      "duration": "2:59"
+    }
+  },
+  "cast": [
+    {
+      "personId": "nikolay-fomenko",
+      "role": "Автор"
+    },
+    {
+      "personId": "anastasia-stotskaya",
+      "role": "Актриса"
+    },
+    {
+      "personId": "yulia-iva",
+      "role": "Актриса"
+    },
+    {
+      "personId": "alexander-matrosov",
+      "role": "Актёр"
+    },
+    {
+      "personId": "marina-alexandrova",
+      "role": "Актриса"
+    },
+    {
+      "personId": "dmitry-dyuzhev",
+      "role": "Актёр"
+    }
+  ],
+  "organizer": {
+    "name": "ООО \"Культурная служба\"",
+    "inn": "7707719297",
+    "erir": "Pb3XmBtzszTf4IICf2KPZJVjgvq3vIU6tikW776"
+  },
+  "sessions": [
+    {
+      "id": "2024-09-07-14-30",
+      "date": "2024-09-07",
+      "time": "14:30",
+      "dayOfWeek": "сегодня",
+      "dateLabel": "07 сентября",
+      "venue": {
+        "id": "moscow-youth-palace",
+        "name": "Московский дворец молодёжи",
+        "type": "Театр",
+        "city": "Москва",
+        "region": "Москва",
+        "address": "Комсомольский пр-т, 28",
+        "coordinates": {
+          "lat": 55.7558,
+          "lng": 37.6173
+        }
+      },
+      "hall": "Основная сцена",
+      "hasTickets": true,
+      "priceFrom": 800,
+      "ticketsLeft": null
+    },
+    {
+      "id": "2024-09-07-19-00",
+      "date": "2024-09-07",
+      "time": "19:00",
+      "dayOfWeek": "сегодня",
+      "dateLabel": "07 сентября",
+      "venue": {
+        "id": "moscow-youth-palace",
+        "name": "Московский дворец молодёжи",
+        "type": "Театр",
+        "city": "Москва",
+        "region": "Москва",
+        "address": "Комсомольский пр-т, 28",
+        "coordinates": {
+          "lat": 55.7558,
+          "lng": 37.6173
+        }
+      },
+      "hall": "Основная сцена",
+      "hasTickets": true,
+      "priceFrom": 3500,
+      "ticketsLeft": 2
+    },
+    {
+      "id": "2024-09-07-22-30",
+      "date": "2024-09-07",
+      "time": "22:30",
+      "dayOfWeek": "сегодня",
+      "dateLabel": "07 сентября",
+      "venue": {
+        "id": "moscow-youth-palace",
+        "name": "Московский дворец молодёжи",
+        "type": "Театр",
+        "city": "Москва",
+        "region": "Москва",
+        "address": "Комсомольский пр-т, 28",
+        "coordinates": {
+          "lat": 55.7558,
+          "lng": 37.6173
+        }
+      },
+      "hall": "Основная сцена",
+      "hasTickets": true,
+      "priceFrom": 1200,
+      "ticketsLeft": null
+    },
+    {
+      "id": "2024-09-08-19-00",
+      "date": "2024-09-08",
+      "time": "19:00",
+      "dayOfWeek": "завтра",
+      "dateLabel": "08 сентября",
+      "venue": {
+        "id": "mariinsky-theatre",
+        "name": "Мариинский театр",
+        "type": "Театр",
+        "city": "Санкт-Петербург",
+        "region": "Санкт-Петербург",
+        "address": "Театральная пл., 1",
+        "coordinates": {
+          "lat": 59.9259,
+          "lng": 30.2986
+        }
+      },
+      "hall": "Малый зал + фойе",
+      "hasTickets": false,
+      "priceFrom": null,
+      "ticketsLeft": 0
+    },
+    {
+      "id": "2024-09-09-19-00",
+      "date": "2024-09-09",
+      "time": "19:00",
+      "dayOfWeek": "воскресенье",
+      "dateLabel": "09 сентября",
+      "venue": {
+        "id": "moscow-youth-palace",
+        "name": "Московский дворец молодёжи",
+        "type": "Театр",
+        "city": "Москва",
+        "region": "Москва",
+        "address": "Комсомольский пр-т, 28",
+        "coordinates": {
+          "lat": 55.7558,
+          "lng": 37.6173
+        }
+      },
+      "hall": "Основная сцена",
+      "hasTickets": true,
+      "priceFrom": 800,
+      "ticketsLeft": null
+    }
+  ],
+  "reviews": [
+    {
+      "id": "review-1",
+      "author": {
+        "firstName": "Олег",
+        "lastName": "Данилов"
+      },
+      "date": "2024-08-12",
+      "rating": 5,
+      "badge": "Великолепно",
+      "badgeColor": "green",
+      "text": "Мюзикл просто заворожил! Музыка великолепна в своей гармонии и динамике. Произведения завучали так, что я могла почувствовать каждый вечерок и луч солнца!"
+    },
+    {
+      "id": "review-2",
+      "author": {
+        "firstName": "Людмила",
+        "lastName": "Иванилова"
+      },
+      "date": "2024-03-29",
+      "rating": 4,
+      "badge": "Хорошо",
+      "badgeColor": "yellow",
+      "text": "Честно говоря, мюзикл оставил равнодушным. Это — классика, и я ожидал большего погружения в музыку. Впечатление такое, будто что-то пропало между мной и сценой, но, просто не нашел своего отклика. Мюзикл просто заворожил! Музыка великолепна в своей гармонии и динамике. Произведения завучали так, что я могла почувствовать каждый вечерок и луч солнца!"
+    }
+  ],
+  "promos": [
+    {
+      "id": "promo-buffet",
+      "image": "/assets/promos/buffet-banner.jpg",
+      "link": "/promo/buffet"
+    },
+    {
+      "id": "promo-mts",
+      "image": "/assets/promos/mts-premium-banner.jpg",
+      "link": "/promo/mts-premium"
+    }
+  ],
+  "meta": {
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-09-07T08:30:00Z",
+    "status": "active",
+    "featured": true
+  }
+}
+

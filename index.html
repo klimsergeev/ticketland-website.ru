@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>«МАММА МИМО! или Мюзикл пошёл не так» — Ticketland</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="components/loader.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Carousel -->
+        <div class="carousel">
+            <img id="carouselImage" src="" alt="Обложка события" class="carousel-image">
+            <div class="carousel-buttons">
+                <button class="carousel-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12H19M5 12L9 8M5 12L9 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="carousel-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M19 12H5M19 12L15 8M19 12L15 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Event Title -->
+        <section class="event-title-section">
+            <div class="event-meta-badges">
+                <span id="ageRating" class="age-badge"></span>
+                <div class="rating-badge">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="white">
+                        <path d="M8 1L10.163 5.38L15 6.12L11.5 9.545L12.326 14.36L8 12.09L3.674 14.36L4.5 9.545L1 6.12L5.837 5.38L8 1Z"/>
+                    </svg>
+                    <span id="rating"></span>
+                </div>
+                <a href="#" class="reviews-link">
+                    <span id="reviewsCount"></span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="event-title-text">
+                <h1 id="eventTitle"></h1>
+                <a href="#" class="venue-link">
+                    <span id="venueSubtitle"></span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="#" class="event-details-link">
+                    Подробнее о событии
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Timetable -->
+        <section class="timetable-section">
+            <div class="timetable-header">
+                <div class="timetable-title">
+                    <h2>Расписание в Москве</h2>
+                </div>
+                <div class="timetable-filters">
+                    <button class="filter-btn">
+                        <span>Месяц</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="filter-btn">
+                        <span>Дни недели</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="tickets-switch">
+                        <div class="switch"></div>
+                        <span class="switch-label">С билетами</span>
+                    </div>
+                </div>
+            </div>
+            <div id="sessionsList"></div>
+            <button class="load-more-btn">Показать ещё 10 событий</button>
+        </section>
+
+        <!-- Event Description -->
+        <section class="description-section">
+            <div class="description-title">
+                <h2>О событии</h2>
+            </div>
+            <div class="description-badges">
+                <div class="duration-badge">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M8 5V8L10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <span id="duration"></span>
+                </div>
+            </div>
+            <div id="descriptionText" class="description-text"></div>
+            <a href="#" class="show-more-link">
+                Показать полностью
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </section>
+
+        <!-- Persons -->
+        <section class="persons-section">
+            <div class="persons-header">
+                <h2>Творческая группа</h2>
+                <button class="show-all-btn">
+                    <span>Все</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div id="personsList" class="persons-list"></div>
+        </section>
+
+        <!-- Reviews -->
+        <section class="reviews-section">
+            <div class="reviews-header">
+                <h2>Отзывы зрителей</h2>
+                <p class="reviews-subtitle">Оценить событие можно после посещения</p>
+            </div>
+            <div id="reviewsList" class="reviews-list"></div>
+            <button class="read-all-reviews-btn">Читать все 895 отзывов</button>
+        </section>
+
+        <!-- Map -->
+        <div id="map-placeholder"></div>
+
+        <!-- Legal Info -->
+        <section class="legal-section">
+            <div class="legal-item">
+                <span class="legal-label">Организатор</span>
+                <span id="organizerName" class="legal-value"></span>
+            </div>
+            <div class="legal-item">
+                <span class="legal-label">ИНН</span>
+                <span id="organizerInn" class="legal-value"></span>
+            </div>
+            <div class="legal-item">
+                <span class="legal-label">ЕРИР ID</span>
+                <span id="organizerErir" class="legal-value"></span>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="components/map/map.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

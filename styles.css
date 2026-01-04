@@ -1,0 +1,791 @@
+/* Fonts */
+@font-face {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-style: normal;
+    src: url('assets/fonts/MTSCompact-Regular.woff2') format('woff2'),
+         url('assets/fonts/MTSCompact-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-style: normal;
+    src: url('assets/fonts/MTSCompact-Medium.woff2') format('woff2'),
+         url('assets/fonts/MTSCompact-Medium.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'MTS Text';
+    font-weight: 400;
+    font-style: normal;
+    src: url('assets/fonts/MTSText-Regular.woff2') format('woff2'),
+         url('assets/fonts/MTSText-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'MTS Text';
+    font-weight: 500;
+    font-style: normal;
+    src: url('assets/fonts/MTSText-Medium.woff2') format('woff2'),
+         url('assets/fonts/MTSText-Medium.woff') format('woff');
+}
+
+/* Design Tokens */
+:root {
+    /* Colors */
+    --text-primary: #1d2023;
+    --text-secondary: #626c77;
+    --text-tertiary: #969fa8;
+    --text-primary-link: #0070e5;
+    --text-negative: #d8400c;
+    
+    --background-primary: white;
+    --background-secondary: #f2f3f7;
+    
+    --controls-primary-active: #ff0032;
+    --controls-tertiary-active: #f2f3f7;
+    --controls-inactive: rgba(188, 195, 208, 0.5);
+    
+    --constant-greyscale-0: white;
+    --constant-normal-apple: #2ecd5c;
+    --constant-light-apple: #77df8d;
+    --constant-dark-banana: #f9c142;
+    --constant-lightest-orange: #fbe9e8;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 360px;
+    margin: 0 auto;
+    font-family: 'MTS Compact', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text-primary);
+    background: var(--background-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Header */
+/* Carousel */
+.carousel {
+    position: relative;
+    width: 360px;
+    height: 241px;
+    background: #f5f5f5;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-buttons {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    display: flex;
+    gap: 12px;
+}
+
+.carousel-btn {
+    width: 32px;
+    height: 32px;
+    background: var(--controls-tertiary-active);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.carousel-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Event Title */
+.event-title-section {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.event-meta-badges {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    height: 24px;
+}
+
+.age-badge {
+    background: var(--controls-tertiary-active);
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-primary);
+}
+
+.rating-badge {
+    background: var(--constant-normal-apple);
+    padding: 2px 6px;
+    border-radius: 6px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.rating-badge svg {
+    width: 16px;
+    height: 16px;
+}
+
+.rating-badge span {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--constant-greyscale-0);
+}
+
+.reviews-link {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.reviews-link svg {
+    width: 16px;
+    height: 16px;
+}
+
+.event-title-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.event-title-text h1 {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--text-primary);
+}
+
+.venue-link {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.venue-link svg {
+    width: 16px;
+    height: 16px;
+}
+
+.event-details-link {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-primary-link);
+    text-decoration: none;
+}
+
+.event-details-link svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Timetable */
+.timetable-section {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.timetable-header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 8px;
+}
+
+.timetable-title h2 {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--text-primary);
+}
+
+.timetable-filters {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.filter-btn {
+    background: var(--controls-tertiary-active);
+    padding: 6px 8px;
+    border-radius: 6px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-primary);
+}
+
+.filter-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.tickets-switch {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.switch {
+    width: 32px;
+    height: 20px;
+    background: var(--controls-inactive);
+    border-radius: 80px;
+    position: relative;
+}
+
+.switch::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: var(--constant-greyscale-0);
+    border-radius: 50%;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%);
+    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.04), 0px 4px 16px 0px rgba(0,0,0,0.04);
+}
+
+.switch-label {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-primary);
+}
+
+/* Session */
+.session-day {
+    display: flex;
+    gap: 12px;
+}
+
+.session-date {
+    width: 84px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.session-date-number {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 40px;
+    color: var(--text-primary);
+}
+
+.session-date-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-bottom: 4px;
+}
+
+.session-date-month {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-primary);
+    margin-bottom: -4px;
+}
+
+.session-date-day {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-secondary);
+    margin-bottom: -4px;
+}
+
+.session-date-region {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--text-negative);
+    margin-bottom: -4px;
+}
+
+.session-times {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.session-time-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.session-time-info {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4px;
+}
+
+.session-time {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    color: var(--text-primary);
+}
+
+.session-venue-name {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-primary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.session-hall {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-secondary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.session-cta-btn {
+    background: var(--controls-primary-active);
+    height: 32px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--constant-greyscale-0);
+}
+
+.session-cta-btn:disabled {
+    background: var(--controls-inactive);
+    color: var(--text-tertiary);
+    opacity: 0.6;
+}
+
+.session-rush {
+    background: var(--constant-greyscale-0);
+    border: 1px solid var(--constant-lightest-orange);
+    padding: 4px 20px 4px 12px;
+    border-radius: 8px;
+    display: none; /* Скрыто для прода */
+    gap: 4px;
+    align-items: center;
+}
+
+.session-rush svg {
+    width: 24px;
+    height: 24px;
+}
+
+.session-rush span {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-primary);
+}
+
+.load-more-btn {
+    background: var(--controls-tertiary-active);
+    height: 44px;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-primary);
+}
+
+/* Event Description */
+.description-section {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.description-title h2 {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--text-primary);
+}
+
+.description-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.duration-badge {
+    background: var(--controls-tertiary-active);
+    padding: 2px 6px;
+    border-radius: 6px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.duration-badge svg {
+    width: 16px;
+    height: 16px;
+}
+
+.duration-badge span {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-primary);
+}
+
+.description-text {
+    font-family: 'MTS Text';
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-primary);
+}
+
+.description-text p {
+    margin-bottom: 20px;
+}
+
+.description-text p:last-child {
+    margin-bottom: 0;
+}
+
+.show-more-link {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-primary-link);
+    text-decoration: none;
+}
+
+.show-more-link svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Persons */
+.persons-section {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.persons-header {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.persons-header h2 {
+    flex: 1;
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--text-primary);
+}
+
+.show-all-btn {
+    background: var(--controls-tertiary-active);
+    padding: 2px 6px;
+    border-radius: 6px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.show-all-btn span {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-primary);
+}
+
+.show-all-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.persons-list {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.persons-list::-webkit-scrollbar {
+    display: none;
+}
+
+.person-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.person-avatar {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+    border-radius: 24px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.person-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+    text-align: center;
+}
+
+.person-name {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--text-primary);
+}
+
+.person-role {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--text-secondary);
+}
+
+/* Reviews */
+.reviews-section {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.reviews-header h2 {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--text-primary);
+}
+
+.reviews-subtitle {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-primary);
+}
+
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.review-card {
+    background: var(--background-secondary);
+    padding: 16px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.review-author {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-primary);
+}
+
+.review-rating {
+    background: var(--constant-light-apple);
+    padding: 2px 6px;
+    border-radius: 6px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.review-rating svg {
+    width: 16px;
+    height: 16px;
+}
+
+.review-rating span {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--constant-greyscale-0);
+}
+
+.review-date {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-secondary);
+}
+
+.review-text {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-primary);
+}
+
+.read-all-reviews-btn {
+    background: var(--controls-tertiary-active);
+    height: 44px;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-primary);
+}
+
+/* Map */
+/* Legal Info */
+.legal-section {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.legal-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.legal-label {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-secondary);
+}
+
+.legal-value {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-primary);
+}
+
+/* Footer */

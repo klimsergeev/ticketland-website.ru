@@ -1,0 +1,116 @@
+/* Header Component Styles */
+
+.header {
+    position: sticky;
+    top: 0;
+    background: var(--background-primary);
+    z-index: 100;
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.04), 0px 4px 16px 0px rgba(0,0,0,0.04);
+}
+
+.header-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 10px 16px;
+    height: 64px;
+    background: var(--constant-greyscale-0);
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.04), 0px 4px 16px 0px rgba(0, 0, 0, 0.04);
+}
+
+.logo {
+    width: 44px;
+    height: 44px;
+}
+
+.header-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.header-user-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.header-user-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.header-user-btn span {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--text-secondary);
+}
+
+.header-user-btn .badge {
+    position: relative;
+}
+
+.header-user-btn .badge::after {
+    content: '2';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--controls-primary-active);
+    color: var(--constant-greyscale-0);
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Navigation */
+.header-nav {
+    display: flex;
+    gap: 12px;
+    padding: 0 20px;
+    height: 44px;
+    align-items: center;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.header-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-item {
+    flex-shrink: 0;
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-primary);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-item-geo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-item-geo img {
+    width: 24px;
+    height: 24px;
+}
+
