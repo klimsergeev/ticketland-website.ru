@@ -12,7 +12,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    padding: 10px 16px;
+    padding: 10px clamp(16px, 4vw, 24px);
     height: 64px;
     background: var(--constant-greyscale-0);
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.04), 0px 4px 16px 0px rgba(0, 0, 0, 0.04);
@@ -84,7 +84,7 @@
 .header-nav {
     display: flex;
     gap: 12px;
-    padding: 0 20px;
+    padding: 0 clamp(16px, 4vw, 24px);
     height: 44px;
     align-items: center;
     overflow-x: auto;

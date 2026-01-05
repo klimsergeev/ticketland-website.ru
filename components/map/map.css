@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    padding: 16px;
+    padding: 16px clamp(16px, 4vw, 24px);
 }
 
 .map-title {
@@ -33,13 +33,17 @@
 
 .map-container {
     position: relative;
-    width: 328px;
-    height: 236px;
+    width: 100%;
+    height: 0;
+    padding-bottom: 71.95%; /* 236/328 = 0.7195 aspect ratio */
     border-radius: 8px;
     overflow: hidden;
 }
 
 .map-image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
