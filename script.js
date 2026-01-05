@@ -132,9 +132,7 @@ function renderSessions(sessions) {
                 </button>
                 ${hasRush ? `
                     <div class="session-rush">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FF5500"/>
-                        </svg>
+                        <i class="icon icon-star-16-fill" style="background-color: #FF5500;"></i>
                         <span>Осталось всего ${session.ticketsLeft} билета!</span>
                     </div>
                 ` : ''}
@@ -203,9 +201,7 @@ function renderReviews(reviews) {
             <div class="review-header">
                 <span class="review-author">${authorName}</span>
                 <div class="review-rating" style="background: var(--${ratingClass})">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="white">
-                        <path d="M8 1L10.163 5.38L15 6.12L11.5 9.545L12.326 14.36L8 12.09L3.674 14.36L4.5 9.545L1 6.12L5.837 5.38L8 1Z"/>
-                    </svg>
+                    <i class="icon icon-star-16-fill"></i>
                     <span>${ratingText}</span>
                 </div>
             </div>
