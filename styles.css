@@ -47,6 +47,10 @@
     --controls-tertiary-active: #f2f3f7;
     --controls-inactive: rgba(188, 195, 208, 0.5);
     
+    --icons-primary: #1d2023;
+    --icons-secondary: #8d969f;
+    --icons-tertiary: #bbc1c7;
+    
     --constant-greyscale-0: white;
     --constant-normal-apple: #2ecd5c;
     --constant-light-apple: #77df8d;
@@ -118,9 +122,11 @@ img {
     padding: 0;
 }
 
-.carousel-btn svg {
+.carousel-btn .icon {
+    display: block;
     width: 24px;
     height: 24px;
+    background-color: var(--icons-primary);
 }
 
 /* Event Title */
@@ -183,9 +189,11 @@ img {
     text-decoration: none;
 }
 
-.reviews-link svg {
+.reviews-link .icon {
+    display: block;
     width: 16px;
     height: 16px;
+    background-color: var(--icons-primary);
 }
 
 .event-title-text {
@@ -214,9 +222,11 @@ img {
     text-decoration: none;
 }
 
-.venue-link svg {
+.venue-link .icon {
+    display: block;
     width: 16px;
     height: 16px;
+    background-color: var(--icons-primary);
 }
 
 .event-details-link {
@@ -231,9 +241,11 @@ img {
     text-decoration: none;
 }
 
-.event-details-link svg {
+.event-details-link .icon {
+    display: block;
     width: 16px;
     height: 16px;
+    background-color: var(--text-primary-link);
 }
 
 /* Timetable */
@@ -280,9 +292,11 @@ img {
     color: var(--text-primary);
 }
 
-.filter-btn svg {
+.filter-btn .icon {
+    display: block;
     width: 16px;
     height: 16px;
+    background-color: var(--icons-primary);
 }
 
 .tickets-switch {
@@ -550,9 +564,11 @@ img {
     text-decoration: none;
 }
 
-.show-more-link svg {
+.show-more-link .icon {
+    display: block;
     width: 16px;
     height: 16px;
+    background-color: var(--text-primary-link);
 }
 
 /* Persons */
@@ -595,9 +611,11 @@ img {
     color: var(--text-primary);
 }
 
-.show-all-btn svg {
+.show-all-btn .icon {
+    display: block;
     width: 16px;
     height: 16px;
+    background-color: var(--icons-primary);
 }
 
 .persons-list {
@@ -786,6 +804,23 @@ img {
     font-size: 14px;
     line-height: 20px;
     color: var(--text-primary);
+}
+
+/* Icon definitions for chevrons */
+.icon-chevron-left-24 {
+    mask-image: url('assets/icons/chevron_left-24-outline.svg');
+}
+
+.icon-chevron-right-24 {
+    mask-image: url('assets/icons/chevron_right-24-outline.svg');
+}
+
+.icon-chevron-right-16 {
+    mask-image: url('assets/icons/chevron_right-16-outline.svg');
+}
+
+.icon-chevron-down-16 {
+    mask-image: url('assets/icons/chevron_down-16-outline.svg');
 }
 
 /* Footer */

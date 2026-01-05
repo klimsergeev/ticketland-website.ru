@@ -39,9 +39,12 @@
     padding: 0;
 }
 
-.header-user-btn svg {
+.header-user-btn .icon {
+    display: block;
     width: 24px;
     height: 24px;
+    flex-shrink: 0;
+    background-color: var(--icons-secondary);
 }
 
 .header-user-btn span {
@@ -109,8 +112,39 @@
     gap: 4px;
 }
 
-.nav-item-geo img {
+.nav-item-geo .icon {
+    display: block;
     width: 24px;
     height: 24px;
+    flex-shrink: 0;
+    background-color: var(--icons-tertiary);
+}
+
+/* Icon base styles */
+.icon {
+    display: inline-block;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+.icon-search {
+    mask-image: url('../../assets/icons/search-24-outline.svg');
+}
+
+.icon-help {
+    mask-image: url('../../assets/icons/help-24-outline.svg');
+}
+
+.icon-shopcart {
+    mask-image: url('../../assets/icons/shopcart-24-fill.svg');
+}
+
+.icon-profile {
+    mask-image: url('../../assets/icons/profile-24-fill.svg');
+}
+
+.icon-geo {
+    mask-image: url('../../assets/icons/geo-24-fill.svg');
 }
 

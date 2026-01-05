@@ -71,10 +71,10 @@
     opacity: 0.9;
 }
 
-.map-btn img {
+.map-btn .icon {
     width: 24px;
     height: 24px;
-    display: block;
+    background-color: var(--icons-primary);
 }
 
 .map-fullscreen {
@@ -94,5 +94,18 @@
 .map-zoom-in,
 .map-zoom-out {
     position: static;
+}
+
+/* Map icon definitions */
+.icon-fullscreen {
+    mask-image: url('../../assets/icons/fullscreen-24-outline.svg');
+}
+
+.icon-zoom-in {
+    mask-image: url('../../assets/icons/zoom_in-24-outline.svg');
+}
+
+.icon-zoom-out {
+    mask-image: url('../../assets/icons/zoom_out-24-outline.svg');
 }
 
