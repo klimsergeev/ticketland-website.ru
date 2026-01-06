@@ -28,12 +28,6 @@
     "name": "Марина Александрова",
     "photo": "assets/persons/marina-alexandrova.jpg",
     "bio": "Российская актриса театра и кино"
-  },
-  "dmitry-dyuzhev": {
-    "id": "dmitry-dyuzhev",
-    "name": "Дмитрий Дюжев",
-    "photo": "assets/persons/dmitry-dyuzhev.jpg",
-    "bio": "Актёр театра и кино"
   }
 }
 

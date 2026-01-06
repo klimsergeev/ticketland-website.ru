@@ -10,7 +10,8 @@
     "assets/events/mamma-mimo/gallery-1.jpg",
     "assets/events/mamma-mimo/gallery-2.jpg",
     "assets/events/mamma-mimo/gallery-3.jpg",
-    "assets/events/mamma-mimo/gallery-4.jpg"
+    "assets/events/mamma-mimo/gallery-4.jpg",
+    "assets/events/mamma-mimo/gallery-5.jpg"
   ],
   "description": {
     "short": "Директор завода хочет подарить жене настоящий мюзикл, но не может остаться в стороне и требует от бедных постановщиков изменения одно нелепее другого.",
@@ -41,10 +42,6 @@
     {
       "personId": "marina-alexandrova",
       "role": "Актриса"
-    },
-    {
-      "personId": "dmitry-dyuzhev",
-      "role": "Актёр"
     }
   ],
   "organizer": {

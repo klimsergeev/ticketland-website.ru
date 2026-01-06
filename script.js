@@ -191,8 +191,13 @@ function renderReviews(reviews) {
         const card = document.createElement('div');
         card.className = 'review-card';
         
-        const ratingClass = review.rating >= 8 ? 'constant-light-apple' : 'constant-dark-banana';
-        const ratingText = review.rating >= 8 ? 'Великолепно' : 'Хорошо';
+        // Use badge data from JSON
+        const badgeColorMap = {
+            'green': 'constant-light-apple',
+            'yellow': 'constant-dark-banana'
+        };
+        const ratingClass = badgeColorMap[review.badgeColor] || 'constant-dark-banana';
+        const ratingText = review.badge;
         
         // Format author name
         const authorName = `${review.author.firstName} ${review.author.lastName}`;

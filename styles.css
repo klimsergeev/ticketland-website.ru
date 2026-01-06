@@ -685,6 +685,8 @@ img {
     flex-direction: column;
     gap: 8px;
     align-items: center;
+    width: 80px;
+    flex-shrink: 0;
 }
 
 .person-avatar {
@@ -703,6 +705,7 @@ img {
     gap: 2px;
     align-items: center;
     text-align: center;
+    width: 100%;
 }
 
 .person-name {
@@ -711,6 +714,10 @@ img {
     font-size: 12px;
     line-height: 18px;
     color: var(--text-primary);
+    text-align: center;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .person-role {
@@ -719,6 +726,10 @@ img {
     font-size: 12px;
     line-height: 18px;
     color: var(--text-secondary);
+    text-align: center;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /* Reviews */
