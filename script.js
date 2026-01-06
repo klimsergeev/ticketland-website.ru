@@ -1,6 +1,10 @@
 // Load persons data
 let personsData = {};
 
+// Gallery state
+let galleryImages = [];
+let currentImageIndex = 0;
+
 async function loadPersons() {
     try {
         const response = await fetch('data/persons.json');
@@ -24,8 +28,11 @@ async function loadEventData() {
 
 // Render event to page
 function renderEvent(event) {
-    // Carousel
-    document.getElementById('carouselImage').src = event.coverImage || 'https://via.placeholder.com/360x241/e0e0e0/999999?text=Cover';
+    // Gallery
+    galleryImages = event.images || [];
+    currentImageIndex = 0;
+    initGallery();
+    initGalleryNavigation();
     
     // Event Title Section
     document.getElementById('ageRating').textContent = `${event.ageRating}+`;
@@ -211,6 +218,102 @@ function renderReviews(reviews) {
         
         container.appendChild(card);
     });
+}
+
+// Gallery functions
+let isAnimating = false;
+
+function initGallery() {
+    const track = document.getElementById('galleryTrack');
+    if (!track || !galleryImages.length) return;
+    
+    // Create three image elements: prev, current, next
+    track.innerHTML = '';
+    
+    const prevIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+    const nextIndex = (currentImageIndex + 1) % galleryImages.length;
+    
+    // Previous image (off-screen left)
+    const prevImg = document.createElement('img');
+    prevImg.src = galleryImages[prevIndex];
+    prevImg.alt = 'Фото события';
+    prevImg.className = 'gallery-image';
+    prevImg.style.transform = 'translateX(-100%)';
+    
+    // Current image (visible)
+    const currentImg = document.createElement('img');
+    currentImg.src = galleryImages[currentImageIndex];
+    currentImg.alt = 'Фото события';
+    currentImg.className = 'gallery-image';
+    currentImg.style.transform = 'translateX(0)';
+    
+    // Next image (off-screen right)
+    const nextImg = document.createElement('img');
+    nextImg.src = galleryImages[nextIndex];
+    nextImg.alt = 'Фото события';
+    nextImg.className = 'gallery-image';
+    nextImg.style.transform = 'translateX(100%)';
+    
+    track.appendChild(prevImg);
+    track.appendChild(currentImg);
+    track.appendChild(nextImg);
+}
+
+function slideGallery(direction) {
+    if (isAnimating || !galleryImages.length) return;
+    
+    isAnimating = true;
+    const track = document.getElementById('galleryTrack');
+    const images = track.querySelectorAll('.gallery-image');
+    
+    if (direction === 'next') {
+        // Slide all images to the left
+        images.forEach(img => {
+            const currentTransform = parseFloat(img.style.transform.match(/-?\d+/)?.[0] || 0);
+            img.style.transform = `translateX(${currentTransform - 100}%)`;
+        });
+        
+        // After animation, update structure
+        setTimeout(() => {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            initGallery();
+            isAnimating = false;
+        }, 300);
+    } else {
+        // Slide all images to the right
+        images.forEach(img => {
+            const currentTransform = parseFloat(img.style.transform.match(/-?\d+/)?.[0] || 0);
+            img.style.transform = `translateX(${currentTransform + 100}%)`;
+        });
+        
+        // After animation, update structure
+        setTimeout(() => {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            initGallery();
+            isAnimating = false;
+        }, 300);
+    }
+}
+
+function showPreviousImage() {
+    slideGallery('prev');
+}
+
+function showNextImage() {
+    slideGallery('next');
+}
+
+function initGalleryNavigation() {
+    const prevBtn = document.querySelector('.gallery-nav-prev');
+    const nextBtn = document.querySelector('.gallery-nav-next');
+    
+    if (prevBtn) {
+        prevBtn.addEventListener('click', showPreviousImage);
+    }
+    
+    if (nextBtn) {
+        nextBtn.addEventListener('click', showNextImage);
+    }
 }
 
 // Initialize
