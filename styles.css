@@ -389,13 +389,19 @@ img {
 .session-day {
     display: flex;
     gap: 12px;
+    margin-bottom: 24px;
+}
+
+.session-day:last-child {
+    margin-bottom: 0;
 }
 
 .session-date {
-    width: 84px;
+    width: 72px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    flex-shrink: 0;
 }
 
 .session-date-number {
@@ -410,7 +416,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    padding-bottom: 4px;
+    margin-top: 0;
 }
 
 .session-date-month {
@@ -428,7 +434,6 @@ img {
     font-size: 14px;
     line-height: 20px;
     color: var(--text-secondary);
-    margin-bottom: -4px;
 }
 
 .session-date-region {
@@ -437,7 +442,7 @@ img {
     font-size: 12px;
     line-height: 18px;
     color: var(--text-negative);
-    margin-bottom: -4px;
+    display: none; /* Временно скрыто */
 }
 
 .session-times {

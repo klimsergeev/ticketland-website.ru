@@ -109,10 +109,12 @@ function renderSessions(sessions) {
         dateDiv.className = 'session-date';
         
         const dayNumber = new Date(date).getDate().toString().padStart(2, '0');
+        // Extract month from dateLabel (remove day number)
+        const monthOnly = firstSession.dateLabel.replace(/^\d+\s+/, '');
         dateDiv.innerHTML = `
             <div class="session-date-number">${dayNumber}</div>
             <div class="session-date-info">
-                <div class="session-date-month">${firstSession.dateLabel}</div>
+                <div class="session-date-month">${monthOnly}</div>
                 <div class="session-date-day">${firstSession.dayOfWeek}</div>
                 ${firstSession.venue.region !== 'Москва' ? `<div class="session-date-region">другой регион</div>` : ''}
             </div>

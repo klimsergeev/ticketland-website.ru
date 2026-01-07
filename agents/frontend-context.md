@@ -1,7 +1,7 @@
 # Frontend Context: Ticketland Website
 
 ## Project Overview
-This is a mobile-first event ticketing website built with vanilla HTML, CSS, and JavaScript. The project focuses on pixel-perfect implementation of Figma designs for the 320-540px mobile breakpoint.
+This is a mobile-first event ticketing website built with vanilla HTML, CSS, and JavaScript. The project focuses on pixel-perfect implementation of Figma designs.
 
 ## Tech Stack
 - **HTML5**: Semantic markup
