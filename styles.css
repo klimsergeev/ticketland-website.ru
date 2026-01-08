@@ -348,6 +348,83 @@ img {
     width: 16px;
     height: 16px;
     background-color: var(--icons-primary);
+    transition: transform 0.2s ease;
+}
+
+/* Filter dropdown */
+.filter-dropdown {
+    position: relative;
+}
+
+/* Dropdown open state - chevron rotates */
+.filter-btn-month.active .filter-chevron {
+    background-color: var(--constant-greyscale-0);
+    transform: rotate(180deg);
+}
+
+.filter-btn.active .filter-chevron {
+    transform: rotate(180deg);
+}
+
+/* Filter active state - when filter value is not default */
+.filter-btn.filter-active {
+    background: #07103e;
+    color: var(--constant-greyscale-0);
+}
+
+.filter-btn.filter-active .filter-chevron {
+    display: none;
+}
+
+.filter-btn.filter-active .filter-close {
+    display: block !important;
+}
+
+.filter-btn.filter-active .icon-close-16 {
+    background-color: var(--constant-greyscale-0);
+}
+
+.filter-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    min-width: 160px;
+    background: var(--background-primary);
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.06),
+                0px 18px 20px 0px rgba(0, 0, 0, 0.08);
+    z-index: 100;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.filter-dropdown-menu.open {
+    display: flex;
+}
+
+.filter-dropdown-option {
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.filter-dropdown-option:hover {
+    background: var(--background-secondary);
+}
+
+.filter-dropdown-option.selected {
+    background: var(--background-secondary);
 }
 
 .tickets-switch {
@@ -962,6 +1039,17 @@ img {
     mask-repeat: no-repeat;
     mask-position: center;
     background-color: var(--icons-primary);
+    width: 16px;
+    height: 16px;
+}
+
+.icon-close-16 {
+    display: inline-block;
+    mask-image: url('assets/icons/close-16-outline.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: var(--constant-greyscale-0);
     width: 16px;
     height: 16px;
 }

@@ -45,6 +45,7 @@ function renderEvent(event) {
     document.getElementById('venueSubtitle').textContent = nearestSession?.venue.name || '';
     
     // Timetable
+    renderMonthDropdown(event.sessions);
     renderSessions(event.sessions);
     
     // Description
@@ -132,6 +133,8 @@ function getMonthName(dateString) {
 let allSessions = [];
 let isShowingAllSessions = false;
 let showOnlyWithTickets = true; // By default show only sessions with tickets
+let selectedMonth = null; // Currently selected month filter (null = all months)
+let selectedWeekday = 'all'; // Currently selected weekday filter ('all', 'weekdays', 'weekends')
 
 // Render sessions
 function renderSessions(sessions, showAll = false) {
@@ -145,6 +148,25 @@ function renderSessions(sessions, showAll = false) {
     let filteredSessions = sessions;
     if (showOnlyWithTickets) {
         filteredSessions = sessions.filter(session => session.hasTickets);
+    }
+
+    // Filter sessions by selected month
+    if (selectedMonth) {
+        const [year, month] = selectedMonth.split('-').map(Number);
+        filteredSessions = filteredSessions.filter(session => {
+            const sessionDate = new Date(session.date);
+            return sessionDate.getFullYear() === year && sessionDate.getMonth() === month;
+        });
+    }
+
+    // Filter sessions by weekday
+    if (selectedWeekday !== 'all') {
+        filteredSessions = filteredSessions.filter(session => {
+            const sessionDate = new Date(session.date);
+            const dayOfWeek = sessionDate.getDay(); // 0 = Sunday, 6 = Saturday
+            const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+            return selectedWeekday === 'weekends' ? isWeekend : !isWeekend;
+        });
     }
 
     // Group sessions by date
@@ -491,8 +513,383 @@ function initTicketsSwitch() {
     }
 }
 
+// Get unique months from sessions
+function getMonthsFromSessions(sessions) {
+    const monthsMap = new Map();
+    const currentYear = new Date().getFullYear();
+
+    // Month names in nominative case for display
+    const monthNames = [
+        'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+        'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'
+    ];
+
+    sessions.forEach(session => {
+        const date = new Date(session.date);
+        const year = date.getFullYear();
+        const month = date.getMonth();
+        const key = `${year}-${month}`;
+
+        if (!monthsMap.has(key)) {
+            const monthName = monthNames[month];
+            // Add year only if it differs from current year
+            const displayName = year !== currentYear ? `${monthName} ${year}` : monthName;
+
+            monthsMap.set(key, {
+                key: key,
+                year: year,
+                month: month,
+                displayName: displayName
+            });
+        }
+    });
+
+    // Sort by year and month
+    return Array.from(monthsMap.values()).sort((a, b) => {
+        if (a.year !== b.year) return a.year - b.year;
+        return a.month - b.month;
+    });
+}
+
+// Render month dropdown options
+function renderMonthDropdown(sessions) {
+    const dropdownMenu = document.getElementById('monthDropdownMenu');
+    if (!dropdownMenu) return;
+
+    const months = getMonthsFromSessions(sessions);
+    dropdownMenu.innerHTML = '';
+
+    // Set initial button text to "Месяц"
+    const btn = document.getElementById('monthFilterBtn');
+    if (btn) {
+        btn.querySelector('span').textContent = 'Месяц';
+    }
+    // Reset selected month to null (all events)
+    selectedMonth = null;
+
+    // Add "Все события" option first
+    const allEventsOption = document.createElement('div');
+    allEventsOption.className = 'filter-dropdown-option selected';
+    allEventsOption.textContent = 'Все события';
+    allEventsOption.dataset.monthKey = 'all';
+
+    allEventsOption.addEventListener('click', () => {
+        // Update selected state
+        dropdownMenu.querySelectorAll('.filter-dropdown-option').forEach(opt => {
+            opt.classList.remove('selected');
+        });
+        allEventsOption.classList.add('selected');
+
+        // Reset to show all months
+        selectedMonth = null;
+
+        // Reset button text to "Месяц"
+        if (btn) {
+            btn.querySelector('span').textContent = 'Месяц';
+        }
+
+        // Update button visual state
+        updateMonthFilterButtonState();
+
+        // Close dropdown
+        closeMonthDropdown();
+
+        // Re-render sessions with current filter
+        renderSessions(allSessions, isShowingAllSessions);
+    });
+
+    dropdownMenu.appendChild(allEventsOption);
+
+    // Add month options
+    months.forEach((monthData) => {
+        const option = document.createElement('div');
+        option.className = 'filter-dropdown-option';
+        option.textContent = monthData.displayName;
+        option.dataset.monthKey = monthData.key;
+
+        option.addEventListener('click', () => {
+            // Update selected state
+            dropdownMenu.querySelectorAll('.filter-dropdown-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            option.classList.add('selected');
+
+            // Update selected month
+            selectedMonth = monthData.key;
+
+            // Update button text to selected month name
+            if (btn) {
+                btn.querySelector('span').textContent = monthData.displayName;
+            }
+
+            // Update button visual state
+            updateMonthFilterButtonState();
+
+            // Close dropdown
+            closeMonthDropdown();
+
+            // Re-render sessions with current filter
+            renderSessions(allSessions, isShowingAllSessions);
+        });
+
+        dropdownMenu.appendChild(option);
+    });
+}
+
+// Toggle month dropdown
+function toggleMonthDropdown() {
+    const btn = document.getElementById('monthFilterBtn');
+    const menu = document.getElementById('monthDropdownMenu');
+
+    if (menu && btn) {
+        const isOpen = menu.classList.contains('open');
+
+        if (isOpen) {
+            closeMonthDropdown();
+        } else {
+            menu.classList.add('open');
+            btn.classList.add('active');
+        }
+    }
+}
+
+// Close month dropdown
+function closeMonthDropdown() {
+    const btn = document.getElementById('monthFilterBtn');
+    const menu = document.getElementById('monthDropdownMenu');
+
+    if (menu) {
+        menu.classList.remove('open');
+    }
+    if (btn) {
+        btn.classList.remove('active');
+    }
+}
+
+// Initialize month filter dropdown
+function initMonthFilter() {
+    const btn = document.getElementById('monthFilterBtn');
+
+    if (btn) {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeWeekdayDropdown(); // Close weekday dropdown when opening month
+            toggleMonthDropdown();
+        });
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        const dropdown = document.getElementById('monthFilterDropdown');
+        if (dropdown && !dropdown.contains(e.target)) {
+            closeMonthDropdown();
+        }
+    });
+}
+
+// Toggle weekday dropdown
+function toggleWeekdayDropdown() {
+    const btn = document.getElementById('weekdayFilterBtn');
+    const menu = document.getElementById('weekdayDropdownMenu');
+
+    if (menu && btn) {
+        const isOpen = menu.classList.contains('open');
+
+        if (isOpen) {
+            closeWeekdayDropdown();
+        } else {
+            menu.classList.add('open');
+            btn.classList.add('active');
+        }
+    }
+}
+
+// Close weekday dropdown
+function closeWeekdayDropdown() {
+    const btn = document.getElementById('weekdayFilterBtn');
+    const menu = document.getElementById('weekdayDropdownMenu');
+
+    if (menu) {
+        menu.classList.remove('open');
+    }
+    if (btn) {
+        btn.classList.remove('active');
+    }
+}
+
+// Initialize weekday filter dropdown
+function initWeekdayFilter() {
+    const btn = document.getElementById('weekdayFilterBtn');
+    const dropdownMenu = document.getElementById('weekdayDropdownMenu');
+
+    if (btn) {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeMonthDropdown(); // Close month dropdown when opening weekday
+            toggleWeekdayDropdown();
+        });
+    }
+
+    // Add click handlers to weekday options
+    if (dropdownMenu) {
+        const options = dropdownMenu.querySelectorAll('.filter-dropdown-option');
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                const weekdayKey = option.dataset.weekdayKey;
+
+                // Update selected state
+                options.forEach(opt => opt.classList.remove('selected'));
+                option.classList.add('selected');
+
+                // Update selected weekday
+                selectedWeekday = weekdayKey;
+
+                // Update button text
+                if (btn) {
+                    if (weekdayKey === 'all') {
+                        btn.querySelector('span').textContent = 'Дни недели';
+                    } else {
+                        btn.querySelector('span').textContent = option.textContent;
+                    }
+                }
+
+                // Update button visual state
+                updateWeekdayFilterButtonState();
+
+                // Close dropdown
+                closeWeekdayDropdown();
+
+                // Re-render sessions with current filter
+                renderSessions(allSessions, isShowingAllSessions);
+            });
+        });
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        const dropdown = document.getElementById('weekdayFilterDropdown');
+        if (dropdown && !dropdown.contains(e.target)) {
+            closeWeekdayDropdown();
+        }
+    });
+}
+
+// Update month filter button state
+function updateMonthFilterButtonState() {
+    const btn = document.getElementById('monthFilterBtn');
+    if (!btn) return;
+
+    const isActive = selectedMonth !== null;
+
+    if (isActive) {
+        btn.classList.add('filter-active');
+    } else {
+        btn.classList.remove('filter-active');
+    }
+}
+
+// Update weekday filter button state
+function updateWeekdayFilterButtonState() {
+    const btn = document.getElementById('weekdayFilterBtn');
+    if (!btn) return;
+
+    const isActive = selectedWeekday !== 'all';
+
+    if (isActive) {
+        btn.classList.add('filter-active');
+    } else {
+        btn.classList.remove('filter-active');
+    }
+}
+
+// Reset month filter to default
+function resetMonthFilter() {
+    selectedMonth = null;
+
+    // Update button text
+    const btn = document.getElementById('monthFilterBtn');
+    if (btn) {
+        btn.querySelector('span').textContent = 'Месяц';
+    }
+
+    // Update dropdown selected state
+    const dropdownMenu = document.getElementById('monthDropdownMenu');
+    if (dropdownMenu) {
+        dropdownMenu.querySelectorAll('.filter-dropdown-option').forEach(opt => {
+            opt.classList.remove('selected');
+            if (opt.dataset.monthKey === 'all') {
+                opt.classList.add('selected');
+            }
+        });
+    }
+
+    // Update button visual state
+    updateMonthFilterButtonState();
+
+    // Re-render sessions
+    renderSessions(allSessions, isShowingAllSessions);
+}
+
+// Reset weekday filter to default
+function resetWeekdayFilter() {
+    selectedWeekday = 'all';
+
+    // Update button text
+    const btn = document.getElementById('weekdayFilterBtn');
+    if (btn) {
+        btn.querySelector('span').textContent = 'Дни недели';
+    }
+
+    // Update dropdown selected state
+    const dropdownMenu = document.getElementById('weekdayDropdownMenu');
+    if (dropdownMenu) {
+        dropdownMenu.querySelectorAll('.filter-dropdown-option').forEach(opt => {
+            opt.classList.remove('selected');
+            if (opt.dataset.weekdayKey === 'all') {
+                opt.classList.add('selected');
+            }
+        });
+    }
+
+    // Update button visual state
+    updateWeekdayFilterButtonState();
+
+    // Re-render sessions
+    renderSessions(allSessions, isShowingAllSessions);
+}
+
+// Initialize filter close buttons
+function initFilterCloseButtons() {
+    // Month filter close button
+    const monthBtn = document.getElementById('monthFilterBtn');
+    if (monthBtn) {
+        const closeIcon = monthBtn.querySelector('.filter-close');
+        if (closeIcon) {
+            closeIcon.addEventListener('click', (e) => {
+                e.stopPropagation();
+                resetMonthFilter();
+            });
+        }
+    }
+
+    // Weekday filter close button
+    const weekdayBtn = document.getElementById('weekdayFilterBtn');
+    if (weekdayBtn) {
+        const closeIcon = weekdayBtn.querySelector('.filter-close');
+        if (closeIcon) {
+            closeIcon.addEventListener('click', (e) => {
+                e.stopPropagation();
+                resetWeekdayFilter();
+            });
+        }
+    }
+}
+
 // Initialize
 loadEventData();
 initScrollToDescription();
 initLoadMoreButton();
 initTicketsSwitch();
+initMonthFilter();
+initWeekdayFilter();
+initFilterCloseButtons();
