@@ -51,71 +51,8 @@
   },
   "sessions": [
     {
-      "id": "2026-02-05-14-30",
-      "date": "2026-02-05",
-      "time": "14:30",
-      "venue": {
-        "id": "moscow-youth-palace",
-        "name": "Московский дворец молодёжи",
-        "type": "Театр",
-        "city": "Москва",
-        "region": "Москва",
-        "address": "Комсомольский пр-т, 28",
-        "coordinates": {
-          "lat": 55.7558,
-          "lng": 37.6173
-        }
-      },
-      "hall": "Основная сцена",
-      "hasTickets": true,
-      "priceFrom": 800,
-      "ticketsLeft": null
-    },
-    {
-      "id": "2026-02-06-19-00",
-      "date": "2026-02-06",
-      "time": "19:00",
-      "venue": {
-        "id": "moscow-youth-palace",
-        "name": "Московский дворец молодёжи",
-        "type": "Театр",
-        "city": "Москва",
-        "region": "Москва",
-        "address": "Комсомольский пр-т, 28",
-        "coordinates": {
-          "lat": 55.7558,
-          "lng": 37.6173
-        }
-      },
-      "hall": "Основная сцена",
-      "hasTickets": true,
-      "priceFrom": 3500,
-      "ticketsLeft": 2
-    },
-    {
-      "id": "2026-02-08-19-00",
-      "date": "2026-02-08",
-      "time": "19:00",
-      "venue": {
-        "id": "mariinsky-theatre",
-        "name": "Мариинский театр",
-        "type": "Театр",
-        "city": "Санкт-Петербург",
-        "region": "Санкт-Петербург",
-        "address": "Театральная пл., 1",
-        "coordinates": {
-          "lat": 59.9259,
-          "lng": 30.2986
-        }
-      },
-      "hall": "Малый зал + фойе",
-      "hasTickets": false,
-      "priceFrom": null,
-      "ticketsLeft": 0
-    },
-    {
-      "id": "2026-02-14-19-00",
-      "date": "2026-02-14",
+      "id": "2026-01-10-19-00",
+      "date": "2026-01-10",
       "time": "19:00",
       "venue": {
         "id": "moscow-youth-palace",
@@ -135,9 +72,177 @@
       "ticketsLeft": null
     },
     {
-      "id": "2026-02-21-15-00",
-      "date": "2026-02-21",
+      "id": "2026-01-12-15-00",
+      "date": "2026-01-12",
       "time": "15:00",
+      "venue": {
+        "id": "moscow-youth-palace",
+        "name": "Московский дворец молодёжи",
+        "type": "Театр",
+        "city": "Москва",
+        "region": "Москва",
+        "address": "Комсомольский пр-т, 28",
+        "coordinates": {
+          "lat": 55.7558,
+          "lng": 37.6173
+        }
+      },
+      "hall": "Основная сцена",
+      "hasTickets": false,
+      "priceFrom": null,
+      "ticketsLeft": 0
+    },
+    {
+      "id": "2026-01-15-20-00",
+      "date": "2026-01-15",
+      "time": "20:00",
+      "venue": {
+        "id": "mariinsky-theatre",
+        "name": "Мариинский театр",
+        "type": "Театр",
+        "city": "Санкт-Петербург",
+        "region": "Санкт-Петербург",
+        "address": "Театральная пл., 1",
+        "coordinates": {
+          "lat": 59.9259,
+          "lng": 30.2986
+        }
+      },
+      "hall": "Большой зал",
+      "hasTickets": true,
+      "priceFrom": 2500,
+      "ticketsLeft": 4
+    },
+    {
+      "id": "2026-01-18-18-30",
+      "date": "2026-01-18",
+      "time": "18:30",
+      "venue": {
+        "id": "moscow-youth-palace",
+        "name": "Московский дворец молодёжи",
+        "type": "Театр",
+        "city": "Москва",
+        "region": "Москва",
+        "address": "Комсомольский пр-т, 28",
+        "coordinates": {
+          "lat": 55.7558,
+          "lng": 37.6173
+        }
+      },
+      "hall": "Основная сцена",
+      "hasTickets": true,
+      "priceFrom": 950,
+      "ticketsLeft": null
+    },
+    {
+      "id": "2026-01-22-19-30",
+      "date": "2026-01-22",
+      "time": "19:30",
+      "venue": {
+        "id": "moscow-youth-palace",
+        "name": "Московский дворец молодёжи",
+        "type": "Театр",
+        "city": "Москва",
+        "region": "Москва",
+        "address": "Комсомольский пр-т, 28",
+        "coordinates": {
+          "lat": 55.7558,
+          "lng": 37.6173
+        }
+      },
+      "hall": "Основная сцена",
+      "hasTickets": true,
+      "priceFrom": 1100,
+      "ticketsLeft": 3
+    },
+    {
+      "id": "2026-01-25-16-00",
+      "date": "2026-01-25",
+      "time": "16:00",
+      "venue": {
+        "id": "moscow-youth-palace",
+        "name": "Московский дворец молодёжи",
+        "type": "Театр",
+        "city": "Москва",
+        "region": "Москва",
+        "address": "Комсомольский пр-т, 28",
+        "coordinates": {
+          "lat": 55.7558,
+          "lng": 37.6173
+        }
+      },
+      "hall": "Основная сцена",
+      "hasTickets": true,
+      "priceFrom": 800,
+      "ticketsLeft": null
+    },
+    {
+      "id": "2026-01-28-19-00",
+      "date": "2026-01-28",
+      "time": "19:00",
+      "venue": {
+        "id": "mariinsky-theatre",
+        "name": "Мариинский театр",
+        "type": "Театр",
+        "city": "Санкт-Петербург",
+        "region": "Санкт-Петербург",
+        "address": "Театральная пл., 1",
+        "coordinates": {
+          "lat": 59.9259,
+          "lng": 30.2986
+        }
+      },
+      "hall": "Малый зал + фойе",
+      "hasTickets": false,
+      "priceFrom": null,
+      "ticketsLeft": 0
+    },
+    {
+      "id": "2026-02-01-14-00",
+      "date": "2026-02-01",
+      "time": "14:00",
+      "venue": {
+        "id": "moscow-youth-palace",
+        "name": "Московский дворец молодёжи",
+        "type": "Театр",
+        "city": "Москва",
+        "region": "Москва",
+        "address": "Комсомольский пр-т, 28",
+        "coordinates": {
+          "lat": 55.7558,
+          "lng": 37.6173
+        }
+      },
+      "hall": "Основная сцена",
+      "hasTickets": true,
+      "priceFrom": 1300,
+      "ticketsLeft": null
+    },
+    {
+      "id": "2026-02-05-20-30",
+      "date": "2026-02-05",
+      "time": "20:30",
+      "venue": {
+        "id": "moscow-youth-palace",
+        "name": "Московский дворец молодёжи",
+        "type": "Театр",
+        "city": "Москва",
+        "region": "Москва",
+        "address": "Комсомольский пр-т, 28",
+        "coordinates": {
+          "lat": 55.7558,
+          "lng": 37.6173
+        }
+      },
+      "hall": "Основная сцена",
+      "hasTickets": true,
+      "priceFrom": 1500,
+      "ticketsLeft": null
+    },
+    {
+      "id": "2026-02-08-17-00",
+      "date": "2026-02-08",
+      "time": "17:00",
       "venue": {
         "id": "moscow-youth-palace",
         "name": "Московский дворец молодёжи",
@@ -153,6 +258,111 @@
       "hall": "Основная сцена",
       "hasTickets": true,
       "priceFrom": 900,
+      "ticketsLeft": 5
+    },
+    {
+      "id": "2026-02-12-19-00",
+      "date": "2026-02-12",
+      "time": "19:00",
+      "venue": {
+        "id": "moscow-youth-palace",
+        "name": "Московский дворец молодёжи",
+        "type": "Театр",
+        "city": "Москва",
+        "region": "Москва",
+        "address": "Комсомольский пр-т, 28",
+        "coordinates": {
+          "lat": 55.7558,
+          "lng": 37.6173
+        }
+      },
+      "hall": "Основная сцена",
+      "hasTickets": false,
+      "priceFrom": null,
+      "ticketsLeft": 0
+    },
+    {
+      "id": "2026-02-15-15-30",
+      "date": "2026-02-15",
+      "time": "15:30",
+      "venue": {
+        "id": "mariinsky-theatre",
+        "name": "Мариинский театр",
+        "type": "Театр",
+        "city": "Санкт-Петербург",
+        "region": "Санкт-Петербург",
+        "address": "Театральная пл., 1",
+        "coordinates": {
+          "lat": 59.9259,
+          "lng": 30.2986
+        }
+      },
+      "hall": "Большой зал",
+      "hasTickets": true,
+      "priceFrom": 2800,
+      "ticketsLeft": null
+    },
+    {
+      "id": "2026-02-19-18-00",
+      "date": "2026-02-19",
+      "time": "18:00",
+      "venue": {
+        "id": "moscow-youth-palace",
+        "name": "Московский дворец молодёжи",
+        "type": "Театр",
+        "city": "Москва",
+        "region": "Москва",
+        "address": "Комсомольский пр-т, 28",
+        "coordinates": {
+          "lat": 55.7558,
+          "lng": 37.6173
+        }
+      },
+      "hall": "Основная сцена",
+      "hasTickets": true,
+      "priceFrom": 1000,
+      "ticketsLeft": null
+    },
+    {
+      "id": "2026-02-23-20-00",
+      "date": "2026-02-23",
+      "time": "20:00",
+      "venue": {
+        "id": "moscow-youth-palace",
+        "name": "Московский дворец молодёжи",
+        "type": "Театр",
+        "city": "Москва",
+        "region": "Москва",
+        "address": "Комсомольский пр-т, 28",
+        "coordinates": {
+          "lat": 55.7558,
+          "lng": 37.6173
+        }
+      },
+      "hall": "Основная сцена",
+      "hasTickets": true,
+      "priceFrom": 1400,
+      "ticketsLeft": 2
+    },
+    {
+      "id": "2026-02-28-19-30",
+      "date": "2026-02-28",
+      "time": "19:30",
+      "venue": {
+        "id": "moscow-youth-palace",
+        "name": "Московский дворец молодёжи",
+        "type": "Театр",
+        "city": "Москва",
+        "region": "Москва",
+        "address": "Комсомольский пр-т, 28",
+        "coordinates": {
+          "lat": 55.7558,
+          "lng": 37.6173
+        }
+      },
+      "hall": "Основная сцена",
+      "hasTickets": true,
+      "priceFrom": 1100,
       "ticketsLeft": null
     }
   ],

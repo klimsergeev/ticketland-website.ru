@@ -128,10 +128,17 @@ function getMonthName(dateString) {
     return months[date.getMonth()];
 }
 
+// Store all sessions globally
+let allSessions = [];
+let isShowingAllSessions = false;
+
 // Render sessions
-function renderSessions(sessions) {
+function renderSessions(sessions, showAll = false) {
     const container = document.getElementById('sessionsList');
     container.innerHTML = '';
+
+    // Store sessions globally
+    allSessions = sessions;
 
     // Group sessions by date
     const sessionsByDate = {};
@@ -142,8 +149,15 @@ function renderSessions(sessions) {
         sessionsByDate[session.date].push(session);
     });
 
+    // Get dates sorted by date
+    const sortedDates = Object.keys(sessionsByDate).sort();
+
+    // Show only first 5 dates by default
+    const datesToShow = showAll ? sortedDates : sortedDates.slice(0, 5);
+
     // Render each date group
-    Object.entries(sessionsByDate).forEach(([date, dateSessions]) => {
+    datesToShow.forEach(date => {
+        const dateSessions = sessionsByDate[date];
         const firstSession = dateSessions[0];
         const dayDiv = document.createElement('div');
         dayDiv.className = 'session-day';
@@ -164,17 +178,17 @@ function renderSessions(sessions) {
                 ${firstSession.venue.region !== 'Москва' ? `<div class="session-date-region">другой регион</div>` : ''}
             </div>
         `;
-        
+
         // Times column
         const timesDiv = document.createElement('div');
         timesDiv.className = 'session-times';
-        
+
         dateSessions.forEach(session => {
             const timeCard = document.createElement('div');
             timeCard.className = 'session-time-card';
-            
+
             const hasRush = session.hasTickets && session.ticketsLeft && session.ticketsLeft <= 5;
-            
+
             timeCard.innerHTML = `
                 <div class="session-time-info">
                     <div class="session-time">${session.time}</div>
@@ -191,14 +205,40 @@ function renderSessions(sessions) {
                     </div>
                 ` : ''}
             `;
-            
+
             timesDiv.appendChild(timeCard);
         });
-        
+
         dayDiv.appendChild(dateDiv);
         dayDiv.appendChild(timesDiv);
         container.appendChild(dayDiv);
     });
+
+    // Update "Load More" button visibility
+    updateLoadMoreButton(showAll, sortedDates.length);
+}
+
+// Update load more button visibility
+function updateLoadMoreButton(showingAll, totalDates) {
+    const loadMoreBtn = document.querySelector('.load-more-btn');
+    if (loadMoreBtn) {
+        if (showingAll || totalDates <= 5) {
+            loadMoreBtn.style.display = 'none';
+        } else {
+            loadMoreBtn.style.display = 'block';
+        }
+    }
+}
+
+// Initialize load more button
+function initLoadMoreButton() {
+    const loadMoreBtn = document.querySelector('.load-more-btn');
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', () => {
+            isShowingAllSessions = true;
+            renderSessions(allSessions, true);
+        });
+    }
 }
 
 // Render persons
@@ -428,3 +468,4 @@ function initScrollToDescription() {
 // Initialize
 loadEventData();
 initScrollToDescription();
+initLoadMoreButton();
