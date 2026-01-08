@@ -465,7 +465,21 @@ function initScrollToDescription() {
     }
 }
 
+// Initialize tickets switch
+function initTicketsSwitch() {
+    const ticketsSwitch = document.querySelector('.tickets-switch');
+    const switchElement = document.querySelector('.switch');
+
+    if (ticketsSwitch && switchElement) {
+        ticketsSwitch.addEventListener('click', () => {
+            switchElement.classList.toggle('active');
+            // TODO: Add filter logic here when ready
+        });
+    }
+}
+
 // Initialize
 loadEventData();
 initScrollToDescription();
 initLoadMoreButton();
+initTicketsSwitch();

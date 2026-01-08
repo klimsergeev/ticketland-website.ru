@@ -2,7 +2,7 @@
 
 # Запустить / остановить сервер на порту 8000
 ```bash
-  cd "/Users/sergeiklimenko/Cursor Projects/Ticketland Website" && python3 -m http.server 8000
+cd "/Users/sergeiklimenko/Cursor Projects/Ticketland Website" && python3 -m http.server 8000
 ```
 ```bash
 lsof -i :8000
