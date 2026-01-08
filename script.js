@@ -1,4 +1,4 @@
-// Load persons data
+// Global data storage for persons
 let personsData = {};
 
 // Gallery state
@@ -49,7 +49,7 @@ function renderEvent(event) {
     
     // Description
     document.getElementById('duration').textContent = formatDuration(event.duration);
-    renderDescription(event.description.full);
+    renderDescription(event.description.short, event.description.full);
     
     // Persons
     renderPersons(event.cast);
@@ -78,17 +78,61 @@ function formatDuration(duration) {
 }
 
 // Render description
-function renderDescription(text) {
+function renderDescription(shortText, fullText) {
     const container = document.getElementById('descriptionText');
-    const paragraphs = text.split('\n\n');
+    const showMoreLink = document.querySelector('.show-more-link');
+
+    // Initially show short description
+    const paragraphs = shortText.split('\n\n');
     container.innerHTML = paragraphs.map(p => `<p>${p}</p>`).join('');
+
+    // Add click handler to "Показать полностью"
+    if (showMoreLink) {
+        showMoreLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            const fullParagraphs = fullText.split('\n\n');
+            container.innerHTML = fullParagraphs.map(p => `<p>${p}</p>`).join('');
+            showMoreLink.style.display = 'none';
+        });
+    }
+}
+
+// Get day of week display (today/tomorrow/day name)
+function getDayOfWeekDisplay(dateString) {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+
+    const sessionDate = new Date(dateString);
+    sessionDate.setHours(0, 0, 0, 0);
+
+    if (sessionDate.getTime() === today.getTime()) {
+        return 'сегодня';
+    } else if (sessionDate.getTime() === tomorrow.getTime()) {
+        return 'завтра';
+    } else {
+        const days = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
+        return days[sessionDate.getDay()];
+    }
+}
+
+// Get formatted month name (genitive case)
+function getMonthName(dateString) {
+    const date = new Date(dateString);
+    const months = [
+        'января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
+        'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'
+    ];
+    return months[date.getMonth()];
 }
 
 // Render sessions
 function renderSessions(sessions) {
     const container = document.getElementById('sessionsList');
     container.innerHTML = '';
-    
+
     // Group sessions by date
     const sessionsByDate = {};
     sessions.forEach(session => {
@@ -97,25 +141,26 @@ function renderSessions(sessions) {
         }
         sessionsByDate[session.date].push(session);
     });
-    
+
     // Render each date group
     Object.entries(sessionsByDate).forEach(([date, dateSessions]) => {
         const firstSession = dateSessions[0];
         const dayDiv = document.createElement('div');
         dayDiv.className = 'session-day';
-        
+
         // Date column
         const dateDiv = document.createElement('div');
         dateDiv.className = 'session-date';
-        
+
         const dayNumber = new Date(date).getDate().toString().padStart(2, '0');
-        // Extract month from dateLabel (remove day number)
-        const monthOnly = firstSession.dateLabel.replace(/^\d+\s+/, '');
+        const monthName = getMonthName(date);
+        const dayOfWeek = getDayOfWeekDisplay(date);
+
         dateDiv.innerHTML = `
             <div class="session-date-number">${dayNumber}</div>
             <div class="session-date-info">
-                <div class="session-date-month">${monthOnly}</div>
-                <div class="session-date-day">${firstSession.dayOfWeek}</div>
+                <div class="session-date-month">${monthName}</div>
+                <div class="session-date-day">${dayOfWeek}</div>
                 ${firstSession.venue.region !== 'Москва' ? `<div class="session-date-region">другой регион</div>` : ''}
             </div>
         `;
@@ -313,15 +358,73 @@ function showNextImage() {
 function initGalleryNavigation() {
     const prevBtn = document.querySelector('.gallery-nav-prev');
     const nextBtn = document.querySelector('.gallery-nav-next');
-    
+
     if (prevBtn) {
         prevBtn.addEventListener('click', showPreviousImage);
     }
-    
+
     if (nextBtn) {
         nextBtn.addEventListener('click', showNextImage);
+    }
+
+    // Initialize swipe support for mobile
+    initGallerySwipe();
+}
+
+// Touch swipe support for gallery
+function initGallerySwipe() {
+    const gallery = document.querySelector('.gallery');
+    if (!gallery) return;
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let touchStartY = 0;
+    let touchEndY = 0;
+    const minSwipeDistance = 50; // minimum distance for swipe
+
+    gallery.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    gallery.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        touchEndY = e.changedTouches[0].screenY;
+        handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+        const diffX = touchStartX - touchEndX;
+        const diffY = touchStartY - touchEndY;
+
+        // Check if horizontal swipe is more significant than vertical
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+            // Swipe left (next image)
+            if (diffX > minSwipeDistance) {
+                showNextImage();
+            }
+            // Swipe right (previous image)
+            else if (diffX < -minSwipeDistance) {
+                showPreviousImage();
+            }
+        }
+    }
+}
+
+// Smooth scroll to description
+function initScrollToDescription() {
+    const link = document.querySelector('.event-details-link');
+    if (link) {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('description').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
     }
 }
 
 // Initialize
 loadEventData();
+initScrollToDescription();
