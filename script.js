@@ -131,6 +131,7 @@ function getMonthName(dateString) {
 // Store all sessions globally
 let allSessions = [];
 let isShowingAllSessions = false;
+let showOnlyWithTickets = true; // By default show only sessions with tickets
 
 // Render sessions
 function renderSessions(sessions, showAll = false) {
@@ -140,9 +141,15 @@ function renderSessions(sessions, showAll = false) {
     // Store sessions globally
     allSessions = sessions;
 
+    // Filter sessions by tickets availability if needed
+    let filteredSessions = sessions;
+    if (showOnlyWithTickets) {
+        filteredSessions = sessions.filter(session => session.hasTickets);
+    }
+
     // Group sessions by date
     const sessionsByDate = {};
-    sessions.forEach(session => {
+    filteredSessions.forEach(session => {
         if (!sessionsByDate[session.date]) {
             sessionsByDate[session.date] = [];
         }
@@ -472,8 +479,14 @@ function initTicketsSwitch() {
 
     if (ticketsSwitch && switchElement) {
         ticketsSwitch.addEventListener('click', () => {
+            // Toggle switch state
             switchElement.classList.toggle('active');
-            // TODO: Add filter logic here when ready
+
+            // Update filter state
+            showOnlyWithTickets = switchElement.classList.contains('active');
+
+            // Re-render sessions with current filter
+            renderSessions(allSessions, isShowingAllSessions);
         });
     }
 }
