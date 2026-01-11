@@ -18,7 +18,7 @@ async function loadPersons() {
 async function loadEventData() {
     try {
         await loadPersons(); // Load persons first
-        const response = await fetch('data/events/mamma-mimo.json');
+        const response = await fetch('data/events/dorogaya-elena-sergeevna.json');
         const event = await response.json();
         renderEvent(event);
     } catch (error) {
