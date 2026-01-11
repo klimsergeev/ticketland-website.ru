@@ -28,6 +28,24 @@
     "name": "Марина Александрова",
     "photo": "assets/persons/marina-alexandrova.jpg",
     "bio": "Российская актриса театра и кино"
+  },
+  "ekaterina-klimova": {
+    "id": "ekaterina-klimova",
+    "name": "Екатерина Климова",
+    "photo": "assets/persons/ekaterina-klimova.jpg",
+    "bio": "Российская актриса театра и кино"
+  },
+  "danya-kiselev": {
+    "id": "danya-kiselev",
+    "name": "Данила Киселев",
+    "photo": "assets/persons/danya-kiselev.jpg",
+    "bio": "Российский актёр театра и кино"
+  },
+  "stanislav-kardashev": {
+    "id": "stanislav-kardashev",
+    "name": "Станислав Кардашев",
+    "photo": "assets/persons/stanislav-kardashev.jpg",
+    "bio": "Российский актёр театра и кино"
   }
 }
 

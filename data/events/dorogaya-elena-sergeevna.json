@@ -1,0 +1,187 @@
+{
+  "id": "dorogaya-elena-sergeevna",
+  "title": "Спектакль «Дорогая Елена Сергеевна»",
+  "genre": "Драма",
+  "ageRating": 18,
+  "rating": 9.2,
+  "reviewsCount": 156,
+  "duration": "01:40",
+  "images": [
+    "assets/events/dorogaya-elena-sergeevna/gallery-1.jpg",
+    "assets/events/dorogaya-elena-sergeevna/gallery-2.jpg",
+    "assets/events/dorogaya-elena-sergeevna/gallery-3.jpg"
+  ],
+  "description": {
+    "short": "Выпускники престижного колледжа приходят к преподавателю с цветами и тайным планом: завладеть ключом от сейфа и подменить свои экзаменационные работы.\n\nКому-то из них это жизненно необходимо, для кого-то — игра в самоутверждение. Никаких этических преград, уверенность, что всё в мире дозволено и всё можно купить…",
+    "full": "Выпускники престижного колледжа приходят к преподавателю с цветами и тайным планом: завладеть ключом от сейфа и подменить свои экзаменационные работы.\n\nКому-то из них это жизненно необходимо, для кого-то — игра в самоутверждение. Никаких этических преград, уверенность, что всё в мире дозволено и всё можно купить…\n\nПростая и безобидная, на первый взгляд, затея перерастает в жестокое столкновение поколений, убеждений, миров. Кто — кого?\n\nПьеса Людмилы Разумовской — абсолютный театральный хит 80-х годов. Спектакль о современных границах морали и совести.",
+    "video": {
+      "url": "https://rutube.ru/video/example",
+      "thumbnail": "assets/events/dorogaya-elena-sergeevna/video-thumb.jpg",
+      "duration": "3:15"
+    }
+  },
+  "cast": [
+    {
+      "personId": "ekaterina-klimova",
+      "role": "Актриса"
+    },
+    {
+      "personId": "danya-kiselev",
+      "role": "Актер"
+    },
+    {
+      "personId": "stanislav-kardashev",
+      "role": "Актер"
+    }
+  ],
+  "organizer": {
+    "name": "Театр «Ателье» («Независимый Театральный Проект»)",
+    "inn": "7729399675"
+  },
+  "sessions": [
+    {
+      "id": "2026-01-12-19-00",
+      "date": "2026-01-12",
+      "time": "19:00",
+      "venue": {
+        "id": "dom-muzyki",
+        "name": "Дом музыки",
+        "type": "Концертный зал",
+        "city": "Москва",
+        "region": "Москва",
+        "address": "Космодамианская наб. 52, стр. 8",
+        "coordinates": {
+          "lat": 55.7344,
+          "lng": 37.6398
+        }
+      },
+      "hall": "Театральный зал",
+      "hasTickets": true,
+      "priceFrom": 2000,
+      "ticketsLeft": null
+    },
+    {
+      "id": "2026-01-13-19-00",
+      "date": "2026-01-13",
+      "time": "19:00",
+      "venue": {
+        "id": "dom-muzyki",
+        "name": "Дом музыки",
+        "type": "Концертный зал",
+        "city": "Москва",
+        "region": "Москва",
+        "address": "Космодамианская наб. 52, стр. 8",
+        "coordinates": {
+          "lat": 55.7344,
+          "lng": 37.6398
+        }
+      },
+      "hall": "Театральный зал",
+      "hasTickets": false,
+      "priceFrom": 2000,
+      "ticketsLeft": null
+    },
+    {
+      "id": "2026-01-27-19-00",
+      "date": "2026-01-27",
+      "time": "19:00",
+      "venue": {
+        "id": "dom-muzyki",
+        "name": "Дом музыки",
+        "type": "Концертный зал",
+        "city": "Москва",
+        "region": "Москва",
+        "address": "Космодамианская наб. 52, стр. 8",
+        "coordinates": {
+          "lat": 55.7344,
+          "lng": 37.6398
+        }
+      },
+      "hall": "Театральный зал",
+      "hasTickets": true,
+      "priceFrom": 2500,
+      "ticketsLeft": null
+    },
+    {
+      "id": "2026-02-11-19-00",
+      "date": "2026-02-11",
+      "time": "19:00",
+      "venue": {
+        "id": "dom-muzyki",
+        "name": "Дом музыки",
+        "type": "Концертный зал",
+        "city": "Москва",
+        "region": "Москва",
+        "address": "Космодамианская наб. 52, стр. 8",
+        "coordinates": {
+          "lat": 55.7344,
+          "lng": 37.6398
+        }
+      },
+      "hall": "Театральный зал",
+      "hasTickets": true,
+      "priceFrom": 2000,
+      "ticketsLeft": null
+    },
+    {
+      "id": "2026-03-23-19-00",
+      "date": "2026-03-23",
+      "time": "19:00",
+      "venue": {
+        "id": "teatr-ermolovoy",
+        "name": "Театр имени Ермоловой",
+        "type": "Театр",
+        "city": "Москва",
+        "region": "Москва",
+        "address": "Тверская ул., 5/6",
+        "coordinates": {
+          "lat": 55.7584,
+          "lng": 37.6132
+        }
+      },
+      "hall": "Зрительный зал",
+      "hasTickets": true,
+      "priceFrom": 1000,
+      "ticketsLeft": null
+    }
+  ],
+  "reviews": [
+    {
+      "id": "review-1",
+      "author": {
+        "firstName": "Ольга",
+        "lastName": "Петрова"
+      },
+      "date": "2025-11-10",
+      "rating": 5,
+      "badge": "Великолепно",
+      "badgeColor": "green",
+      "text": "Такой Екатерину Климову мы ещё не видели… Блестящая работа! Драматическая, искренняя, без фальши и гламура. Браво."
+    },
+    {
+      "id": "review-2",
+      "author": {
+        "firstName": "Андрей",
+        "lastName": "Смирнов"
+      },
+      "date": "2025-10-20",
+      "rating": 5,
+      "badge": "Великолепно",
+      "badgeColor": "green",
+      "text": "Пьеса осталась классической, но всё вокруг — музыка, свет, интонации — делают её острой и сегодняшней. Очень точная постановка, которая не боится быть актуальной."
+    }
+  ],
+  "promos": [
+    {
+      "id": "promo-mts-cashback",
+      "image": "assets/promos/mts-cashback-banner.jpg",
+      "link": "/promo/mts-cashback"
+    }
+  ],
+  "meta": {
+    "createdAt": "2024-10-01T10:00:00Z",
+    "updatedAt": "2026-01-11T08:30:00Z",
+    "status": "active",
+    "featured": true
+  }
+}
