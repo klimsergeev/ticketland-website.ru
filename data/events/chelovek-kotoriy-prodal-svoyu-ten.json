@@ -26,22 +26,20 @@
   },
   "cast": [
     {
+      "personId": "dmitriy-streltsov",
+      "role": "Режиссёр"
+    },
+    {
       "personId": "nikita-efremov",
-      "role": "Виктор"
+      "role": "Актёр"
     },
     {
       "personId": "sergey-makovetskiy",
-      "role": "Покупатель"
+      "role": "Актёр"
     },
     {
       "personId": "kseniya-rappoport",
-      "role": "Тень / Голос дома"
-    }
-  ],
-  "crew": [
-    {
-      "name": "Дмитрий Стрельцов",
-      "role": "Режиссёр"
+      "role": "Актриса"
     }
   ],
   "organizer": {

@@ -64,6 +64,12 @@
     "name": "Ксения Раппопорт",
     "photo": "assets/persons/kseniya-rappoport.jpg",
     "bio": "Российская актриса театра и кино"
+  },
+  "dmitriy-streltsov": {
+    "id": "dmitriy-streltsov",
+    "name": "Дмитрий Стрельцов",
+    "photo": "assets/persons/dmitriy-streltsov.jpg",
+    "bio": "Режиссёр театра и кино"
   }
 }
 
