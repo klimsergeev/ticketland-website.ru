@@ -1,9 +1,17 @@
-// Determine base path based on current URL depth
+// Determine base path based on current URL and script location
 function getBasePath() {
-    const path = window.location.pathname;
-    // Count directory depth (number of slashes minus 1)
-    const depth = (path.match(/\//g) || []).length - 1;
-    return '../'.repeat(depth) || './';
+    // Find the loader.js script to determine the actual base path
+    const scripts = document.getElementsByTagName('script');
+    for (let i = 0; i < scripts.length; i++) {
+        const src = scripts[i].src;
+        if (src.includes('components/loader.js')) {
+            // Extract base path from script src (remove 'components/loader.js')
+            const basePath = src.replace(/components\/loader\.js.*$/, '');
+            return basePath;
+        }
+    }
+    // Fallback: use current location without the last segment
+    return './';
 }
 const BASE_PATH = getBasePath();
 window.TICKETLAND_BASE_PATH = BASE_PATH;
