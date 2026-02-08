@@ -1,0 +1,361 @@
+/* Timetable */
+.timetable-section {
+    padding: 16px clamp(16px, 4vw, 24px);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.timetable-header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 8px;
+}
+
+.timetable-title h2 {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--text-primary);
+}
+
+.timetable-filters {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.filter-btn {
+    background: var(--controls-tertiary-active);
+    padding: 6px 8px;
+    border-radius: 6px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-primary);
+}
+
+.filter-btn .icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: var(--icons-primary);
+    transition: transform 0.2s ease;
+}
+
+/* Filter dropdown */
+.filter-dropdown {
+    position: relative;
+}
+
+/* Dropdown open state - chevron rotates */
+.filter-btn-month.active .filter-chevron {
+    background-color: var(--constant-greyscale-0);
+    transform: rotate(180deg);
+}
+
+.filter-btn.active .filter-chevron {
+    transform: rotate(180deg);
+}
+
+/* Filter active state - when filter value is not default */
+.filter-btn.filter-active {
+    background: #07103e;
+    color: var(--constant-greyscale-0);
+}
+
+.filter-btn.filter-active .filter-chevron {
+    display: none;
+}
+
+.filter-btn.filter-active .filter-close {
+    display: block !important;
+}
+
+.filter-btn.filter-active .icon-close-16 {
+    background-color: var(--constant-greyscale-0);
+}
+
+.filter-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    min-width: 160px;
+    background: var(--background-primary);
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.06),
+                0px 18px 20px 0px rgba(0, 0, 0, 0.08);
+    z-index: 100;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.filter-dropdown-menu.open {
+    display: flex;
+}
+
+.filter-dropdown-option {
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.filter-dropdown-option:hover {
+    background: var(--background-secondary);
+}
+
+.filter-dropdown-option.selected {
+    background: var(--background-secondary);
+}
+
+.tickets-switch {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.switch {
+    width: 32px;
+    height: 20px;
+    background: var(--controls-inactive);
+    border-radius: 80px;
+    position: relative;
+    transition: background-color 0.2s ease;
+}
+
+.switch::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: var(--constant-greyscale-0);
+    border-radius: 50%;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.04), 0px 4px 16px 0px rgba(0,0,0,0.04);
+    transition: left 0.2s ease;
+}
+
+/* Active state */
+.switch.active {
+    background: #26CD58;
+}
+
+.switch.active::after {
+    left: 15px;
+}
+
+.switch-label {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-primary);
+}
+
+/* Session */
+.session-day {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.session-day:last-child {
+    margin-bottom: 0;
+}
+
+.session-date {
+    width: 84px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-shrink: 0;
+}
+
+.session-date-number {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 40px;
+    color: var(--text-primary);
+}
+
+.session-date-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 0;
+}
+
+.session-date-month {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-primary);
+    margin-bottom: -4px;
+}
+
+.session-date-day {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-secondary);
+}
+
+.session-date-region {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--text-negative);
+    display: none; /* Temporarily hidden */
+}
+
+.session-times {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.session-time-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.session-time-info {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4px;
+}
+
+.session-time {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    color: var(--text-primary);
+}
+
+.session-venue-name {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-primary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.session-hall {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-secondary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.session-cta-btn {
+    background: var(--controls-primary-active);
+    height: 32px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--constant-greyscale-0);
+}
+
+.session-cta-btn:disabled {
+    background: var(--controls-inactive);
+    color: var(--text-tertiary);
+    opacity: 0.6;
+}
+
+.session-rush {
+    background: var(--constant-greyscale-0);
+    border: 1px solid var(--constant-lightest-orange);
+    padding: 4px 20px 4px 12px;
+    border-radius: 8px;
+    display: none; /* Hidden for production */
+    gap: 4px;
+    align-items: center;
+}
+
+.session-rush svg {
+    width: 24px;
+    height: 24px;
+}
+
+.session-rush span {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-primary);
+}
+
+.load-more-btn {
+    background: var(--controls-tertiary-active);
+    height: 44px;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-primary);
+}
+
+/* Icon masks for timetable */
+.icon-chevron-down-16 {
+    display: inline-block;
+    mask-image: url('../../assets/icons/chevron_down-16-outline.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: var(--icons-primary);
+    width: 16px;
+    height: 16px;
+}
+
+.icon-close-16 {
+    display: inline-block;
+    mask-image: url('../../assets/icons/close-16-outline.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: var(--constant-greyscale-0);
+    width: 16px;
+    height: 16px;
+}

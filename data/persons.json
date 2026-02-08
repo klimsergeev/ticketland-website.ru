@@ -46,6 +46,24 @@
     "name": "Станислав Кардашев",
     "photo": "assets/persons/stanislav-kardashev.jpg",
     "bio": "Российский актёр театра и кино"
+  },
+  "nikita-efremov": {
+    "id": "nikita-efremov",
+    "name": "Никита Ефремов",
+    "photo": "assets/persons/nikita-efremov.jpg",
+    "bio": "Российский актёр театра и кино"
+  },
+  "sergey-makovetskiy": {
+    "id": "sergey-makovetskiy",
+    "name": "Сергей Маковецкий",
+    "photo": "assets/persons/sergey-makovetskiy.jpg",
+    "bio": "Народный артист России, актёр театра и кино"
+  },
+  "kseniya-rappoport": {
+    "id": "kseniya-rappoport",
+    "name": "Ксения Раппопорт",
+    "photo": "assets/persons/kseniya-rappoport.jpg",
+    "bio": "Российская актриса театра и кино"
   }
 }
 

@@ -1,0 +1,38 @@
+<!-- Timetable -->
+<section class="timetable-section">
+    <div class="timetable-header">
+        <div class="timetable-title">
+            <h2>Расписание в Москве</h2>
+        </div>
+        <div class="timetable-filters">
+            <div class="filter-dropdown" id="monthFilterDropdown">
+                <button class="filter-btn filter-btn-month" id="monthFilterBtn">
+                    <span>Месяц</span>
+                    <i class="icon icon-chevron-down-16 filter-chevron"></i>
+                    <i class="icon icon-close-16 filter-close" style="display: none;"></i>
+                </button>
+                <div class="filter-dropdown-menu" id="monthDropdownMenu">
+                    <!-- Month options will be dynamically inserted here -->
+                </div>
+            </div>
+            <div class="filter-dropdown" id="weekdayFilterDropdown">
+                <button class="filter-btn" id="weekdayFilterBtn">
+                    <span>Дни недели</span>
+                    <i class="icon icon-chevron-down-16 filter-chevron"></i>
+                    <i class="icon icon-close-16 filter-close" style="display: none;"></i>
+                </button>
+                <div class="filter-dropdown-menu" id="weekdayDropdownMenu">
+                    <div class="filter-dropdown-option selected" data-weekday-key="all">Все дни</div>
+                    <div class="filter-dropdown-option" data-weekday-key="weekdays">Будни</div>
+                    <div class="filter-dropdown-option" data-weekday-key="weekends">Выходные</div>
+                </div>
+            </div>
+            <div class="tickets-switch">
+                <div class="switch active"></div>
+                <span class="switch-label">С билетами</span>
+            </div>
+        </div>
+    </div>
+    <div id="sessionsList"></div>
+    <button class="load-more-btn">Показать ещё 10 событий</button>
+</section>

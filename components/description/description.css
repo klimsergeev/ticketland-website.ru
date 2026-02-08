@@ -1,0 +1,101 @@
+/* Event Description */
+.description-section {
+    padding: 16px clamp(16px, 4vw, 24px);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.description-title h2 {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--text-primary);
+}
+
+.description-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.duration-badge {
+    background: var(--controls-tertiary-active);
+    padding: 2px 6px;
+    border-radius: 6px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.duration-badge svg {
+    width: 16px;
+    height: 16px;
+}
+
+.duration-badge span {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-primary);
+}
+
+.description-text {
+    font-family: 'MTS Text';
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-primary);
+}
+
+.description-text p {
+    margin-bottom: 20px;
+}
+
+.description-text p:last-child {
+    margin-bottom: 0;
+}
+
+.show-more-link {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-primary-link);
+    text-decoration: none;
+}
+
+.show-more-link .icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: var(--text-primary-link);
+}
+
+/* Icon masks for description */
+.icon-time-16-fill {
+    display: inline-block;
+    mask-image: url('../../assets/icons/time-16-fill.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: var(--icons-secondary);
+    width: 16px;
+    height: 16px;
+}
+
+.icon-chevron-down-16 {
+    display: inline-block;
+    mask-image: url('../../assets/icons/chevron_down-16-outline.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: var(--icons-primary);
+    width: 16px;
+    height: 16px;
+}
