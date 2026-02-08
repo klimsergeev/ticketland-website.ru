@@ -1,0 +1,141 @@
+/* Event Title */
+.event-title-section {
+    padding: 16px clamp(16px, 4vw, 24px);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.event-meta-badges {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    height: 24px;
+}
+
+.age-badge {
+    background: var(--controls-tertiary-active);
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-primary);
+}
+
+.rating-badge {
+    background: var(--constant-normal-apple);
+    padding: 2px 6px;
+    border-radius: 6px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.rating-badge svg {
+    width: 16px;
+    height: 16px;
+}
+
+.rating-badge span {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--constant-greyscale-0);
+}
+
+.reviews-link {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.reviews-link .icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: var(--icons-primary);
+}
+
+.event-title-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.event-title-text h1 {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--text-primary);
+}
+
+.venue-link {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.venue-link .icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: var(--icons-primary);
+}
+
+.event-details-link {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-primary-link);
+    text-decoration: none;
+}
+
+.event-details-link .icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: var(--text-primary-link);
+}
+
+/* Icon masks for event-info */
+.icon-star-16-fill {
+    display: inline-block;
+    mask-image: url('../../assets/icons/star-16-fill.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: var(--constant-greyscale-0);
+    width: 16px;
+    height: 16px;
+}
+
+.icon-chevron-right-16 {
+    display: inline-block;
+    mask-image: url('../../assets/icons/chevron_right-16-outline.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: var(--icons-primary);
+    width: 16px;
+    height: 16px;
+}

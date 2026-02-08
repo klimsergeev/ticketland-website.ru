@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>«МАММА МИМО! или Мюзикл пошёл не так» — Ticketland</title>
+    <title>Ticketland — Билеты на концерты, спектакли и мероприятия</title>
     <link rel="stylesheet" href="styles.css">
     <script src="components/loader.js"></script>
 </head>
@@ -13,160 +13,26 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Gallery -->
-        <div class="gallery">
-            <div class="gallery-track" id="galleryTrack">
-                <!-- Images will be dynamically inserted here -->
-            </div>
-            
-            <!-- Navigation arrows -->
-            <button class="gallery-nav-btn gallery-nav-prev" aria-label="Предыдущее фото">
-                <i class="icon icon-chevron-left-24-outline"></i>
-            </button>
-            <button class="gallery-nav-btn gallery-nav-next" aria-label="Следующее фото">
-                <i class="icon icon-chevron-right-24-outline"></i>
-            </button>
-            
-            <!-- Action buttons -->
-            <div class="gallery-actions">
-                <button class="gallery-action-btn" aria-label="Добавить в избранное">
-                    <i class="icon icon-bookmark-24-outline"></i>
-                </button>
-                <button class="gallery-action-btn" aria-label="Поделиться">
-                    <i class="icon icon-share-android-24-outline"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Event Title -->
-        <section class="event-title-section">
-            <div class="event-meta-badges">
-                <span id="ageRating" class="age-badge"></span>
-                <div class="rating-badge">
-                    <i class="icon icon-star-16-fill"></i>
-                    <span id="rating"></span>
+        <section class="placeholder-section">
+            <div class="placeholder-content">
+                <h1>Главная страница в разработке</h1>
+                <p>Скоро здесь появится каталог событий, афиша и рекомендации</p>
+                <div class="placeholder-links">
+                    <h3>Доступные страницы:</h3>
+                    <ul>
+                        <li><a href="/event/mamma-mimo/">Карточка события</a></li>
+                        <!-- <li><a href="/search/">Поиск</a></li> -->
+                        <!-- <li><a href="/persons/nikolay-fomenko/">Страница персоны</a></li> -->
+                        <!-- <li><a href="/cart/">Корзина</a></li> -->
+                        <!-- <li><a href="/payment/">Оплата</a></li> -->
+                        <!-- <li><a href="/order/12345/">Страница заказа</a></li> -->
+                    </ul>
                 </div>
-                <a href="#" class="reviews-link">
-                    <span id="reviewsCount"></span>
-                    <i class="icon icon-chevron-right-16"></i>
-                </a>
-            </div>
-            <div class="event-title-text">
-                <h1 id="eventTitle"></h1>
-                <a href="#" class="venue-link">
-                    <span id="venueSubtitle"></span>
-                    <i class="icon icon-chevron-right-16"></i>
-                </a>
-                <a href="#description" class="event-details-link">
-                    Подробнее о событии
-                    <i class="icon icon-chevron-right-16"></i>
-                </a>
-            </div>
-        </section>
-
-        <!-- Timetable -->
-        <section class="timetable-section">
-            <div class="timetable-header">
-                <div class="timetable-title">
-                    <h2>Расписание в Москве</h2>
-                </div>
-                <div class="timetable-filters">
-                    <div class="filter-dropdown" id="monthFilterDropdown">
-                        <button class="filter-btn filter-btn-month" id="monthFilterBtn">
-                            <span>Месяц</span>
-                            <i class="icon icon-chevron-down-16 filter-chevron"></i>
-                            <i class="icon icon-close-16 filter-close" style="display: none;"></i>
-                        </button>
-                        <div class="filter-dropdown-menu" id="monthDropdownMenu">
-                            <!-- Month options will be dynamically inserted here -->
-                        </div>
-                    </div>
-                    <div class="filter-dropdown" id="weekdayFilterDropdown">
-                        <button class="filter-btn" id="weekdayFilterBtn">
-                            <span>Дни недели</span>
-                            <i class="icon icon-chevron-down-16 filter-chevron"></i>
-                            <i class="icon icon-close-16 filter-close" style="display: none;"></i>
-                        </button>
-                        <div class="filter-dropdown-menu" id="weekdayDropdownMenu">
-                            <div class="filter-dropdown-option selected" data-weekday-key="all">Все дни</div>
-                            <div class="filter-dropdown-option" data-weekday-key="weekdays">Будни</div>
-                            <div class="filter-dropdown-option" data-weekday-key="weekends">Выходные</div>
-                        </div>
-                    </div>
-                    <div class="tickets-switch">
-                        <div class="switch active"></div>
-                        <span class="switch-label">С билетами</span>
-                    </div>
-                </div>
-            </div>
-            <div id="sessionsList"></div>
-            <button class="load-more-btn">Показать ещё 10 событий</button>
-        </section>
-
-        <!-- Event Description -->
-        <section id="description" class="description-section">
-            <div class="description-title">
-                <h2>О событии</h2>
-            </div>
-            <div class="description-badges">
-                <div class="duration-badge">
-                    <i class="icon icon-time-16-fill"></i>
-                    <span id="duration"></span>
-                </div>
-            </div>
-            <div id="descriptionText" class="description-text"></div>
-            <a href="#" class="show-more-link">
-                Показать полностью
-                <i class="icon icon-chevron-down-16"></i>
-            </a>
-        </section>
-
-        <!-- Persons -->
-        <section class="persons-section">
-            <div class="persons-header">
-                <h2>Творческая группа</h2>
-                <button class="show-all-btn">
-                    <span>Все</span>
-                    <i class="icon icon-chevron-right-16"></i>
-                </button>
-            </div>
-            <div id="personsList" class="persons-list"></div>
-        </section>
-
-        <!-- Reviews -->
-        <section class="reviews-section">
-            <div class="reviews-header">
-                <h2>Отзывы зрителей</h2>
-                <p class="reviews-subtitle">Оценить событие можно после посещения</p>
-            </div>
-            <div id="reviewsList" class="reviews-list"></div>
-            <button class="read-all-reviews-btn">Читать все 895 отзывов</button>
-        </section>
-
-        <!-- Map -->
-        <div id="map-placeholder"></div>
-
-        <!-- Legal Info -->
-        <section class="legal-section">
-            <div class="legal-item">
-                <span class="legal-label">Организатор</span>
-                <span id="organizerName" class="legal-value"></span>
-            </div>
-            <div class="legal-item">
-                <span class="legal-label">ИНН</span>
-                <span id="organizerInn" class="legal-value"></span>
-            </div>
-            <div class="legal-item">
-                <span class="legal-label">ЕРИР ID</span>
-                <span id="organizerErir" class="legal-value"></span>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
     <div id="footer-placeholder"></div>
-
-    <script src="components/map/map.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>

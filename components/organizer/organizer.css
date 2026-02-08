@@ -1,0 +1,28 @@
+/* Legal Info */
+.legal-section {
+    padding: 16px clamp(16px, 4vw, 24px);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.legal-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.legal-label {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-secondary);
+}
+
+.legal-value {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-primary);
+}

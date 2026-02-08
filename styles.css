@@ -39,18 +39,18 @@
     --text-tertiary: #969fa8;
     --text-primary-link: #0070e5;
     --text-negative: #d8400c;
-    
+
     --background-primary: white;
     --background-secondary: #f2f3f7;
-    
+
     --controls-primary-active: #ff0032;
     --controls-tertiary-active: #f2f3f7;
     --controls-inactive: rgba(188, 195, 208, 0.5);
-    
+
     --icons-primary: #1d2023;
     --icons-secondary: #8d969f;
     --icons-tertiary: #bbc1c7;
-    
+
     --constant-greyscale-0: white;
     --constant-normal-apple: #2ecd5c;
     --constant-light-apple: #77df8d;
@@ -90,742 +90,22 @@ img {
 }
 
 /* Header */
+/* Styles moved to components/header/header.css */
+
 /* Gallery */
-.gallery {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 66.94%; /* 241/360 = 0.6694 aspect ratio */
-    background: #f5f5f5;
-    overflow: hidden;
-}
-
-.gallery-track {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.gallery-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 300ms ease-in-out;
-}
-
-/* Navigation arrows */
-.gallery-nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-}
-
-.gallery-nav-prev {
-    left: 12px;
-}
-
-.gallery-nav-next {
-    right: 12px;
-}
-
-.gallery-nav-btn .icon {
-    display: block;
-    width: 24px;
-    height: 24px;
-    background-color: var(--icons-primary);
-}
-
-/* Action buttons */
-.gallery-actions {
-    position: absolute;
-    bottom: 16px;
-    right: 16px;
-    display: flex;
-    gap: 12px;
-    z-index: 2;
-}
-
-.gallery-action-btn {
-    width: 32px;
-    height: 32px;
-    background: var(--controls-tertiary-active);
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-}
-
-.gallery-action-btn .icon {
-    display: block;
-    width: 24px;
-    height: 24px;
-    background-color: var(--icons-primary);
-}
+/* Styles moved to components/gallery/gallery.css */
 
 /* Event Title */
-.event-title-section {
-    padding: 16px clamp(16px, 4vw, 24px);
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.event-meta-badges {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    height: 24px;
-}
-
-.age-badge {
-    background: var(--controls-tertiary-active);
-    padding: 2px 6px;
-    border-radius: 6px;
-    font-family: 'MTS Compact';
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 20px;
-    color: var(--text-primary);
-}
-
-.rating-badge {
-    background: var(--constant-normal-apple);
-    padding: 2px 6px;
-    border-radius: 6px;
-    display: flex;
-    gap: 4px;
-    align-items: center;
-}
-
-.rating-badge svg {
-    width: 16px;
-    height: 16px;
-}
-
-.rating-badge span {
-    font-family: 'MTS Compact';
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 20px;
-    color: var(--constant-greyscale-0);
-}
-
-.reviews-link {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    font-family: 'MTS Compact';
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    color: var(--text-primary);
-    text-decoration: none;
-}
-
-.reviews-link .icon {
-    display: block;
-    width: 16px;
-    height: 16px;
-    background-color: var(--icons-primary);
-}
-
-.event-title-text {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.event-title-text h1 {
-    font-family: 'MTS Compact';
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
-    color: var(--text-primary);
-}
-
-.venue-link {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    font-family: 'MTS Compact';
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 24px;
-    color: var(--text-primary);
-    text-decoration: none;
-}
-
-.venue-link .icon {
-    display: block;
-    width: 16px;
-    height: 16px;
-    background-color: var(--icons-primary);
-}
-
-.event-details-link {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    font-family: 'MTS Compact';
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 24px;
-    color: var(--text-primary-link);
-    text-decoration: none;
-}
-
-.event-details-link .icon {
-    display: block;
-    width: 16px;
-    height: 16px;
-    background-color: var(--text-primary-link);
-}
+/* Styles moved to components/event-info/event-info.css */
 
 /* Timetable */
-.timetable-section {
-    padding: 16px clamp(16px, 4vw, 24px);
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.timetable-header {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding-bottom: 8px;
-}
-
-.timetable-title h2 {
-    font-family: 'MTS Compact';
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
-    color: var(--text-primary);
-}
-
-.timetable-filters {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-}
-
-.filter-btn {
-    background: var(--controls-tertiary-active);
-    padding: 6px 8px;
-    border-radius: 6px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    font-family: 'MTS Compact';
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 20px;
-    color: var(--text-primary);
-}
-
-.filter-btn .icon {
-    display: block;
-    width: 16px;
-    height: 16px;
-    background-color: var(--icons-primary);
-    transition: transform 0.2s ease;
-}
-
-/* Filter dropdown */
-.filter-dropdown {
-    position: relative;
-}
-
-/* Dropdown open state - chevron rotates */
-.filter-btn-month.active .filter-chevron {
-    background-color: var(--constant-greyscale-0);
-    transform: rotate(180deg);
-}
-
-.filter-btn.active .filter-chevron {
-    transform: rotate(180deg);
-}
-
-/* Filter active state - when filter value is not default */
-.filter-btn.filter-active {
-    background: #07103e;
-    color: var(--constant-greyscale-0);
-}
-
-.filter-btn.filter-active .filter-chevron {
-    display: none;
-}
-
-.filter-btn.filter-active .filter-close {
-    display: block !important;
-}
-
-.filter-btn.filter-active .icon-close-16 {
-    background-color: var(--constant-greyscale-0);
-}
-
-.filter-dropdown-menu {
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 0;
-    min-width: 160px;
-    background: var(--background-primary);
-    border-radius: 8px;
-    padding: 8px;
-    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.06),
-                0px 18px 20px 0px rgba(0, 0, 0, 0.08);
-    z-index: 100;
-    display: none;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.filter-dropdown-menu.open {
-    display: flex;
-}
-
-.filter-dropdown-option {
-    padding: 6px 8px;
-    border-radius: 4px;
-    font-family: 'MTS Compact';
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    color: var(--text-primary);
-    cursor: pointer;
-    transition: background-color 0.15s ease;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.filter-dropdown-option:hover {
-    background: var(--background-secondary);
-}
-
-.filter-dropdown-option.selected {
-    background: var(--background-secondary);
-}
-
-.tickets-switch {
-    display: flex;
-    gap: 6px;
-    align-items: center;
-    cursor: pointer;
-    user-select: none;
-}
-
-.switch {
-    width: 32px;
-    height: 20px;
-    background: var(--controls-inactive);
-    border-radius: 80px;
-    position: relative;
-    transition: background-color 0.2s ease;
-}
-
-.switch::after {
-    content: '';
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    background: var(--constant-greyscale-0);
-    border-radius: 50%;
-    top: 50%;
-    left: 3px;
-    transform: translateY(-50%);
-    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.04), 0px 4px 16px 0px rgba(0,0,0,0.04);
-    transition: left 0.2s ease;
-}
-
-/* Active state */
-.switch.active {
-    background: #26CD58;
-}
-
-.switch.active::after {
-    left: 15px;
-}
-
-.switch-label {
-    font-family: 'MTS Compact';
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    color: var(--text-primary);
-}
-
-/* Session */
-.session-day {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 24px;
-}
-
-.session-day:last-child {
-    margin-bottom: 0;
-}
-
-.session-date {
-    width: 84px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    flex-shrink: 0;
-}
-
-.session-date-number {
-    font-family: 'MTS Compact';
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 40px;
-    color: var(--text-primary);
-}
-
-.session-date-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-top: 0;
-}
-
-.session-date-month {
-    font-family: 'MTS Compact';
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 24px;
-    color: var(--text-primary);
-    margin-bottom: -4px;
-}
-
-.session-date-day {
-    font-family: 'MTS Compact';
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    color: var(--text-secondary);
-}
-
-.session-date-region {
-    font-family: 'MTS Compact';
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 18px;
-    color: var(--text-negative);
-    display: none; /* Временно скрыто */
-}
-
-.session-times {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.session-time-card {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.session-time-info {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 4px;
-}
-
-.session-time {
-    font-family: 'MTS Compact';
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 28px;
-    color: var(--text-primary);
-}
-
-.session-venue-name {
-    font-family: 'MTS Compact';
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    color: var(--text-primary);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.session-hall {
-    font-family: 'MTS Compact';
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    color: var(--text-secondary);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.session-cta-btn {
-    background: var(--controls-primary-active);
-    height: 32px;
-    padding: 6px 8px;
-    border-radius: 6px;
-    font-family: 'MTS Compact';
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 20px;
-    color: var(--constant-greyscale-0);
-}
-
-.session-cta-btn:disabled {
-    background: var(--controls-inactive);
-    color: var(--text-tertiary);
-    opacity: 0.6;
-}
-
-.session-rush {
-    background: var(--constant-greyscale-0);
-    border: 1px solid var(--constant-lightest-orange);
-    padding: 4px 20px 4px 12px;
-    border-radius: 8px;
-    display: none; /* Скрыто для прода */
-    gap: 4px;
-    align-items: center;
-}
-
-.session-rush svg {
-    width: 24px;
-    height: 24px;
-}
-
-.session-rush span {
-    font-family: 'MTS Compact';
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    color: var(--text-primary);
-}
-
-.load-more-btn {
-    background: var(--controls-tertiary-active);
-    height: 44px;
-    padding: 10px;
-    border-radius: 8px;
-    width: 100%;
-    font-family: 'MTS Compact';
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 24px;
-    color: var(--text-primary);
-}
+/* Styles moved to components/timetable/timetable.css */
 
 /* Event Description */
-.description-section {
-    padding: 16px clamp(16px, 4vw, 24px);
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.description-title h2 {
-    font-family: 'MTS Compact';
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
-    color: var(--text-primary);
-}
-
-.description-badges {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
-.duration-badge {
-    background: var(--controls-tertiary-active);
-    padding: 2px 6px;
-    border-radius: 6px;
-    display: flex;
-    gap: 4px;
-    align-items: center;
-}
-
-.duration-badge svg {
-    width: 16px;
-    height: 16px;
-}
-
-.duration-badge span {
-    font-family: 'MTS Compact';
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 20px;
-    color: var(--text-primary);
-}
-
-.description-text {
-    font-family: 'MTS Text';
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 24px;
-    color: var(--text-primary);
-}
-
-.description-text p {
-    margin-bottom: 20px;
-}
-
-.description-text p:last-child {
-    margin-bottom: 0;
-}
-
-.show-more-link {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    font-family: 'MTS Compact';
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 24px;
-    color: var(--text-primary-link);
-    text-decoration: none;
-}
-
-.show-more-link .icon {
-    display: block;
-    width: 16px;
-    height: 16px;
-    background-color: var(--text-primary-link);
-}
+/* Styles moved to components/description/description.css */
 
 /* Persons */
-.persons-section {
-    padding: 16px clamp(16px, 4vw, 24px);
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.persons-header {
-    display: flex;
-    gap: 8px;
-    align-items: flex-start;
-}
-
-.persons-header h2 {
-    flex: 1;
-    font-family: 'MTS Compact';
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
-    color: var(--text-primary);
-}
-
-.show-all-btn {
-    background: var(--controls-tertiary-active);
-    padding: 2px 6px;
-    border-radius: 6px;
-    display: flex;
-    gap: 4px;
-    align-items: center;
-}
-
-.show-all-btn span {
-    font-family: 'MTS Compact';
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 20px;
-    color: var(--text-primary);
-}
-
-.show-all-btn .icon {
-    display: block;
-    width: 16px;
-    height: 16px;
-    background-color: var(--icons-primary);
-}
-
-.persons-list {
-    display: flex;
-    gap: 16px;
-    overflow-x: auto;
-    scrollbar-width: none;
-}
-
-.persons-list::-webkit-scrollbar {
-    display: none;
-}
-
-.person-card {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: center;
-    width: 80px;
-    flex-shrink: 0;
-}
-
-.person-avatar {
-    width: 80px;
-    height: 80px;
-    min-width: 80px;
-    min-height: 80px;
-    border-radius: 24px;
-    object-fit: cover;
-    flex-shrink: 0;
-}
-
-.person-info {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-}
-
-.person-name {
-    font-family: 'MTS Compact';
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 18px;
-    color: var(--text-primary);
-    text-align: center;
-    width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
-.person-role {
-    font-family: 'MTS Compact';
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 18px;
-    color: var(--text-secondary);
-    text-align: center;
-    width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
+/* Styles moved to components/persons/persons.css */
 
 /* Reviews */
 .reviews-section {
@@ -934,82 +214,12 @@ img {
 }
 
 /* Map */
+/* Styles moved to components/map/map.css */
+
 /* Legal Info */
-.legal-section {
-    padding: 16px clamp(16px, 4vw, 24px);
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
+/* Styles moved to components/organizer/organizer.css */
 
-.legal-item {
-    display: flex;
-    flex-direction: column;
-}
-
-.legal-label {
-    font-family: 'MTS Compact';
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    color: var(--text-secondary);
-}
-
-.legal-value {
-    font-family: 'MTS Compact';
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    color: var(--text-primary);
-}
-
-/* Icon masks for main content */
-.icon-chevron-left-24,
-.icon-chevron-left-24-outline {
-    display: inline-block;
-    mask-image: url('assets/icons/chevron_left-24-outline.svg');
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    background-color: var(--icons-primary);
-    width: 24px;
-    height: 24px;
-}
-
-.icon-chevron-right-24,
-.icon-chevron-right-24-outline {
-    display: inline-block;
-    mask-image: url('assets/icons/chevron_right-24-outline.svg');
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    background-color: var(--icons-primary);
-    width: 24px;
-    height: 24px;
-}
-
-.icon-bookmark-24-outline {
-    display: inline-block;
-    mask-image: url('assets/icons/bookmark-24-outline.svg');
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    background-color: var(--icons-primary);
-    width: 24px;
-    height: 24px;
-}
-
-.icon-share-android-24-outline {
-    display: inline-block;
-    mask-image: url('assets/icons/share_android-24-outline.svg');
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    background-color: var(--icons-primary);
-    width: 24px;
-    height: 24px;
-}
-
+/* Icon masks for reviews */
 .icon-star-16-fill {
     display: inline-block;
     mask-image: url('assets/icons/star-16-fill.svg');
@@ -1021,48 +231,454 @@ img {
     height: 16px;
 }
 
-.icon-chevron-right-16 {
-    display: inline-block;
-    mask-image: url('assets/icons/chevron_right-16-outline.svg');
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    background-color: var(--icons-primary);
-    width: 16px;
-    height: 16px;
+/* Placeholder Pages (Stub Pages) */
+.placeholder-section {
+    padding: 24px clamp(16px, 4vw, 24px);
+    min-height: calc(100vh - 200px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.icon-chevron-down-16 {
-    display: inline-block;
-    mask-image: url('assets/icons/chevron_down-16-outline.svg');
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    background-color: var(--icons-primary);
-    width: 16px;
-    height: 16px;
+.placeholder-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    text-align: center;
 }
 
-.icon-close-16 {
-    display: inline-block;
-    mask-image: url('assets/icons/close-16-outline.svg');
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    background-color: var(--constant-greyscale-0);
-    width: 16px;
-    height: 16px;
+.placeholder-content h1 {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--text-primary);
 }
 
-.icon-time-16-fill {
+.placeholder-content p {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-secondary);
+}
+
+.placeholder-note {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-tertiary);
+}
+
+.placeholder-links {
+    margin-top: 24px;
+    text-align: left;
+    width: 100%;
+}
+
+.placeholder-links h3 {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.placeholder-links ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.placeholder-links a {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-primary-link);
+    text-decoration: none;
+}
+
+.placeholder-links a:hover {
+    text-decoration: underline;
+}
+
+.back-link {
     display: inline-block;
-    mask-image: url('assets/icons/time-16-fill.svg');
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    background-color: var(--icons-secondary);
-    width: 16px;
-    height: 16px;
+    margin-top: 24px;
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-primary-link);
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Search Page Placeholder */
+.search-placeholder {
+    width: 100%;
+    max-width: 400px;
+    margin: 16px 0;
+}
+
+.search-input-wrapper {
+    width: 100%;
+}
+
+.search-input {
+    width: 100%;
+    height: 44px;
+    padding: 10px 16px;
+    border: 1px solid var(--controls-inactive);
+    border-radius: 8px;
+    font-family: 'MTS Compact';
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-primary);
+    background: var(--background-secondary);
+}
+
+.search-input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Person Page Placeholder */
+.person-placeholder-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.person-placeholder-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 32px;
+    background: var(--controls-tertiary-active);
+}
+
+.person-placeholder-role {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-secondary);
+}
+
+/* Hall Schema Page Placeholder */
+.hall-placeholder {
+    margin-bottom: 24px;
+}
+
+.session-info {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-primary);
+}
+
+.session-datetime {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-secondary);
+}
+
+.session-venue {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-secondary);
+}
+
+.hall-schema-placeholder {
+    width: 100%;
+    max-width: 400px;
+    border: 2px dashed var(--controls-inactive);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+}
+
+.stage-placeholder {
+    background: var(--controls-tertiary-active);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+}
+
+.seats-placeholder {
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Cart Page Placeholder */
+.cart-placeholder {
+    width: 100%;
+    max-width: 400px;
+    margin: 16px 0;
+}
+
+.cart-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 32px;
+    background: var(--background-secondary);
+    border-radius: 16px;
+}
+
+.cart-empty-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--controls-tertiary-active);
+}
+
+/* Payment Page Placeholder */
+.payment-methods {
+    width: 100%;
+    max-width: 400px;
+    margin: 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.payment-method {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    background: var(--background-secondary);
+    border-radius: 16px;
+    text-align: left;
+}
+
+.payment-method h3 {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-primary);
+}
+
+.payment-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.payment-divider::before,
+.payment-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--controls-inactive);
+}
+
+.payment-divider span {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-tertiary);
+}
+
+.payment-placeholder-btn {
+    height: 44px;
+    padding: 10px;
+    border-radius: 8px;
+    background: var(--controls-primary-active);
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--constant-greyscale-0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-placeholder-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.card-form-placeholder {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-input-placeholder {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.card-input-placeholder label {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-secondary);
+}
+
+.card-input-placeholder input {
+    height: 44px;
+    padding: 10px 12px;
+    border: 1px solid var(--controls-inactive);
+    border-radius: 8px;
+    font-family: 'MTS Compact';
+    font-size: 17px;
+    line-height: 24px;
+    background: var(--background-primary);
+}
+
+.card-input-placeholder input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.card-row {
+    display: flex;
+    gap: 12px;
+}
+
+.card-row .card-input-placeholder {
+    flex: 1;
+}
+
+/* Order Success Page Placeholder */
+.order-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--constant-normal-apple);
+}
+
+.order-number {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-secondary);
+}
+
+.order-details {
+    width: 100%;
+    max-width: 400px;
+    background: var(--background-secondary);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.order-details h3 {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.order-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.order-info-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.order-info-row .label {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-secondary);
+}
+
+.order-info-row .value {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-primary);
+}
+
+.order-actions {
+    width: 100%;
+    max-width: 400px;
+}
+
+.order-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.order-btn-placeholder {
+    height: 44px;
+    padding: 10px;
+    border-radius: 8px;
+    background: var(--controls-primary-active);
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--constant-greyscale-0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.order-btn-placeholder.secondary {
+    background: var(--controls-tertiary-active);
+    color: var(--text-primary);
 }
 
 /* Footer */
+/* Styles moved to components/footer/footer.css */

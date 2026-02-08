@@ -1,0 +1,121 @@
+/* Persons */
+.persons-section {
+    padding: 16px clamp(16px, 4vw, 24px);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.persons-header {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.persons-header h2 {
+    flex: 1;
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--text-primary);
+}
+
+.show-all-btn {
+    background: var(--controls-tertiary-active);
+    padding: 2px 6px;
+    border-radius: 6px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.show-all-btn span {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-primary);
+}
+
+.show-all-btn .icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: var(--icons-primary);
+}
+
+.persons-list {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.persons-list::-webkit-scrollbar {
+    display: none;
+}
+
+.person-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    width: 80px;
+    flex-shrink: 0;
+}
+
+.person-avatar {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+    border-radius: 24px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.person-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.person-name {
+    font-family: 'MTS Compact';
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--text-primary);
+    text-align: center;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.person-role {
+    font-family: 'MTS Compact';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--text-secondary);
+    text-align: center;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Icon masks for persons */
+.icon-chevron-right-16 {
+    display: inline-block;
+    mask-image: url('../../assets/icons/chevron_right-16-outline.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: var(--icons-primary);
+    width: 16px;
+    height: 16px;
+}
